@@ -103,38 +103,25 @@ export default function HomePage() {
         {/* Top Spacer for Fixed Navbar */}
         <div className="h-24" />
 
-        {/* Hero Bottom Typography & Right Action Bar */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 w-full">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            {/* Left Content Area: Poppy Productions + Creative Films & Brand Stories */}
-            <div className="max-w-2xl text-left">
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#FF5E3A] block mb-2">
-                POPPY PRODUCTIONS
-              </span>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
-                Creative Films <br />
-                & Brand Stories
-              </h1>
-            </div>
+        {/* Hero Bottom Bar */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 w-full flex items-center justify-end">
+          {/* Right Action Bar: Play Showreel + Scroll Down */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <button
+              onClick={() => openModal(projects[0])}
+              className="px-6 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-xl backdrop-blur-sm"
+            >
+              <Play className="w-3.5 h-3.5 fill-black" />
+              <span>Play Showreel</span>
+            </button>
 
-            {/* Right Action Bar: Play Showreel + Scroll Down */}
-            <div className="flex items-center gap-3 sm:gap-4">
-              <button
-                onClick={() => openModal(projects[0])}
-                className="px-6 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-xl"
-              >
-                <Play className="w-3.5 h-3.5 fill-black" />
-                <span>Play Showreel</span>
-              </button>
-
-              <a
-                href="#manifesto"
-                className="w-11 h-11 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:border-[#FF5E3A] transition-colors"
-                aria-label="Scroll to Next Section"
-              >
-                <ChevronDown className="w-4 h-4" />
-              </a>
-            </div>
+            <a
+              href="#manifesto"
+              className="w-11 h-11 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:border-[#FF5E3A] transition-colors"
+              aria-label="Scroll to Next Section"
+            >
+              <ChevronDown className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
