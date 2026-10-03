@@ -66,7 +66,7 @@ export default function ContactPage() {
         </div>
 
         {/* Hero */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-16 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
             <MessageSquare className="w-3.5 h-3.5" /> Direct Studio Channels
           </span>
@@ -84,7 +84,7 @@ export default function ContactPage() {
         {/* Main Grid: Form + Locations */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
           {/* Left Form (7 Cols) */}
-          <div className="lg:col-span-7 p-8 sm:p-12 rounded-3xl bg-neutral-900/70 border border-white/10">
+          <div className="lg:col-span-7 p-8 sm:p-12 rounded-3xl bg-neutral-900/70 border border-white/10 reveal-left">
             {submitted ? (
               <div className="py-16 text-center space-y-4">
                 <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto">
@@ -208,7 +208,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Locations (5 Cols) */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-6 reveal-right">
             <h3 className="text-xl font-bold text-white uppercase tracking-tight mb-4">
               Physical Studios
             </h3>

@@ -135,7 +135,7 @@ export default function StartProjectPage() {
         </div>
 
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-12 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
             <Sparkles className="w-3.5 h-3.5" /> Interactive Production Planner
           </span>
@@ -151,7 +151,7 @@ export default function StartProjectPage() {
         </div>
 
         {/* Step Progress Bar */}
-        <div className="mb-12">
+        <div className="mb-12 reveal">
           <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3">
             <span>Step {currentStep} of 5</span>
             <span className="text-[#FF5E3A]">
@@ -171,7 +171,7 @@ export default function StartProjectPage() {
         </div>
 
         {/* Main Card */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900/80 border border-white/10 shadow-2xl backdrop-blur-xl">
+        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900/80 border border-white/10 shadow-2xl backdrop-blur-xl reveal-scale">
           {isCompleted ? (
             <div className="py-12 text-center space-y-6">
               <div className="w-20 h-20 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto">

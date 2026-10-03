@@ -132,7 +132,7 @@ export default function HomePage() {
       <section id="manifesto" className="relative py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-orange-600/10 via-rose-600/10 to-transparent blur-[160px] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-8 reveal">
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight">
             Most Brands <br />
             <span className="text-[#FF5E3A]">Create Content.</span> <br />
@@ -150,7 +150,7 @@ export default function HomePage() {
       <section id="selected-work" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#08080a]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
             <div>
               <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
                 SELECTED WORK
@@ -184,14 +184,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Projects Grid: LAG-FREE (Only mounts video on active hover!) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* Projects Grid: LAG-FREE & Smooth Staggered Scroll Reveal */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 reveal-stagger">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
                 onMouseEnter={() => setHoveredProjectId(project.id)}
                 onMouseLeave={() => setHoveredProjectId(null)}
-                className="group relative rounded-2xl overflow-hidden bg-neutral-900/60 border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col hover:shadow-2xl hover:shadow-orange-500/10"
+                className="reveal group relative rounded-2xl overflow-hidden bg-neutral-900/60 border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-1"
               >
                 {/* Media Container */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-black">
@@ -276,7 +276,7 @@ export default function HomePage() {
           </div>
 
           {/* View All Works Button */}
-          <div className="mt-14 text-center">
+          <div className="mt-14 text-center reveal">
             <Link
               href="/portfolio"
               onClick={playUiClick}
@@ -294,7 +294,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
               THE 3-ACT ARCHITECTURE
             </span>
@@ -306,8 +306,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#FF5E3A]/50 transition-all group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+            <div className="reveal p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#FF5E3A]/50 transition-all group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
                 01
               </div>
@@ -320,7 +320,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#FF5E3A]/50 transition-all group">
+            <div className="reveal p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#FF5E3A]/50 transition-all group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
                 02
               </div>
@@ -333,7 +333,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#FF5E3A]/50 transition-all group">
+            <div className="reveal p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#FF5E3A]/50 transition-all group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
                 03
               </div>
@@ -354,8 +354,8 @@ export default function HomePage() {
       {/* ========================================================================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#08080a]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal-stagger">
+            <div className="reveal p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 transition-all">
               <span className="text-3xl sm:text-5xl font-black text-white block mb-1">
                 150M+
               </span>
@@ -364,7 +364,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+            <div className="reveal p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 transition-all">
               <span className="text-3xl sm:text-5xl font-black text-[#FF5E3A] block mb-1">
                 18
               </span>
@@ -373,7 +373,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+            <div className="reveal p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 transition-all">
               <span className="text-3xl sm:text-5xl font-black text-white block mb-1">
                 42
               </span>
@@ -382,7 +382,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+            <div className="reveal p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/15 transition-all">
               <span className="text-3xl sm:text-5xl font-black text-[#FF5E3A] block mb-1">
                 98%
               </span>
@@ -397,7 +397,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 6. PARTNERS MARQUEE                                                      */}
       {/* ========================================================================= */}
-      <section className="py-14 border-t border-b border-white/5 bg-neutral-950 overflow-hidden">
+      <section className="py-14 border-t border-b border-white/5 bg-neutral-950 overflow-hidden reveal">
         <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
           <span className="text-[11px] uppercase tracking-[0.3em] font-semibold text-neutral-400">
             Trusted By Visionary Global Brands

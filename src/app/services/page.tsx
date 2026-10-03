@@ -38,7 +38,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Hero Headline */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-20 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
             <Zap className="w-3.5 h-3.5" /> Full-Spectrum Studio Capabilities
           </span>
@@ -54,7 +54,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Detailed 6 Services Grid */}
-        <div className="space-y-16 mb-28">
+        <div className="space-y-16 mb-28 reveal-stagger">
           {servicesData.map((svc) => (
             <div
               key={svc.id}
@@ -139,7 +139,7 @@ export default function ServicesPage() {
 
         {/* The 4-Phase Production Pipeline */}
         <div className="py-20 border-t border-b border-white/10 mb-28">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
               SEAMLESS EXECUTION
             </span>
@@ -151,7 +151,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
             {productionPipeline.map((step) => (
               <div
                 key={step.step}
@@ -170,7 +170,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Interactive Scope & Production Cost Calculator */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900/80 border border-white/15 mb-20">
+        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900/80 border border-white/15 mb-20 reveal-scale">
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
               REAL-TIME ESTIMATOR

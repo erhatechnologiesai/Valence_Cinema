@@ -34,7 +34,7 @@ export default function TeamPage() {
         </div>
 
         {/* Hero */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-16 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
             <Users className="w-3.5 h-3.5" /> Masters of the Cinematic Craft
           </span>
@@ -50,7 +50,7 @@ export default function TeamPage() {
         </div>
 
         {/* Department Filters */}
-        <div className="flex flex-wrap gap-2 mb-12">
+        <div className="flex flex-wrap gap-2 mb-12 reveal">
           {departments.map((dept) => (
             <button
               key={dept}
@@ -70,7 +70,7 @@ export default function TeamPage() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 reveal-stagger">
           {filteredMembers.map((member) => (
             <div
               key={member.id}
@@ -146,7 +146,7 @@ export default function TeamPage() {
         </div>
 
         {/* Join the Crew / Careers Banner */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 reveal-scale">
           <div className="space-y-2 max-w-xl">
             <span className="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-wider text-[#FF5E3A]">
               <Briefcase className="w-3.5 h-3.5" /> Now Hiring For 2026/2027 Expeditions

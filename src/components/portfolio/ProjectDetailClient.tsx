@@ -52,7 +52,7 @@ export default function ProjectDetailClient({
       </div>
 
       {/* Hero Video Screen */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 reveal-scale">
         <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden bg-black border border-white/15 shadow-2xl group">
           {/* Main Video Loop */}
           <video
@@ -115,7 +115,7 @@ export default function ProjectDetailClient({
           {/* Left 2 Cols: Synopsis, Challenge, Solution & BTS */}
           <div className="lg:col-span-2 space-y-14">
             {/* The Concept */}
-            <div>
+            <div className="reveal">
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-3">
                 THE NARRATIVE CONCEPT
               </span>
@@ -128,7 +128,7 @@ export default function ProjectDetailClient({
             </div>
 
             {/* Challenge & Solution Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-stagger">
               <div className="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 space-y-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
                   The Production Challenge
@@ -149,11 +149,11 @@ export default function ProjectDetailClient({
             </div>
 
             {/* Campaign Performance Metrics */}
-            <div>
+            <div className="reveal">
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-4">
                 CAMPAIGN IMPACT & ROI
               </span>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-4 reveal-stagger">
                 {project.metrics.map((m, i) => (
                   <div
                     key={i}
@@ -171,11 +171,11 @@ export default function ProjectDetailClient({
             </div>
 
             {/* Behind the Scenes Stills */}
-            <div>
+            <div className="reveal">
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-4">
                 BEHIND THE SCENES BREAKDOWN
               </span>
-              <div className="space-y-6">
+              <div className="space-y-6 reveal-stagger">
                 {project.behindTheScenes.map((bts, i) => (
                   <div
                     key={i}
@@ -204,7 +204,7 @@ export default function ProjectDetailClient({
           </div>
 
           {/* Right Col: Technical Credits & Specs Table */}
-          <div className="space-y-8">
+          <div className="space-y-8 reveal-right">
             <div className="p-8 rounded-3xl bg-neutral-900/80 border border-white/10 sticky top-28 space-y-6">
               <h3 className="text-lg font-bold uppercase tracking-wider text-white border-b border-white/10 pb-4 flex items-center justify-between">
                 <span>Production Specs</span>
@@ -314,7 +314,7 @@ export default function ProjectDetailClient({
       </section>
 
       {/* Next Project Transition Bar */}
-      <section className="border-t border-white/10 py-16 bg-neutral-950">
+      <section className="border-t border-white/10 py-16 bg-neutral-950 reveal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <Link
             href={`/portfolio/${prevProject.slug}`}

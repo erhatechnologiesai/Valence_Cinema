@@ -100,7 +100,7 @@ export default function AboutPage() {
         </div>
 
         {/* Hero Headline */}
-        <div className="max-w-4xl mb-20">
+        <div className="max-w-4xl mb-20 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-6">
             <Sparkles className="w-3.5 h-3.5" /> Born From Raw Cinema
           </span>
@@ -116,7 +116,7 @@ export default function AboutPage() {
         </div>
 
         {/* Studio Stills / Reel Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24 reveal-stagger">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
             <img
               src="/posters/frame_hero.webp"
@@ -156,7 +156,7 @@ export default function AboutPage() {
 
         {/* Studio Philosophy 3 Pillars */}
         <div className="py-16 border-t border-b border-white/10 mb-24">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-12 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
               FOUNDATIONAL PILLARS
             </span>
@@ -165,7 +165,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
             <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 space-y-4">
               <div className="w-10 h-10 rounded-lg bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center">
                 <Camera className="w-5 h-5" />
@@ -200,7 +200,7 @@ export default function AboutPage() {
 
         {/* Cine Arsenal / Equipment Standard */}
         <div className="mb-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
             <div>
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
                 PRODUCTION INFRASTRUCTURE
@@ -214,7 +214,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
             {cineGear.map((group, idx) => (
               <div
                 key={idx}
@@ -240,7 +240,7 @@ export default function AboutPage() {
 
         {/* Milestones Timeline */}
         <div className="py-16 border-t border-white/10 mb-20">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-12 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
               OUR JOURNEY
             </span>
@@ -249,7 +249,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="relative border-l border-white/15 pl-6 sm:pl-10 space-y-12 ml-4">
+          <div className="relative border-l border-white/15 pl-6 sm:pl-10 space-y-12 ml-4 reveal-stagger">
             {milestones.map((m, idx) => (
               <div key={idx} className="relative group">
                 {/* Dot */}
@@ -266,7 +266,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-950 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-950 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 reveal-scale">
           <div>
             <h3 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
               Ready to create your next landmark film?

@@ -53,7 +53,7 @@ export default function PortfolioPage() {
 
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl reveal">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
               <Film className="w-3.5 h-3.5" /> Curated Cinema Archive
             </span>
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* Quick Metrics Bar */}
-          <div className="flex items-center gap-6 p-4 rounded-2xl bg-white/[0.02] border border-white/10 text-xs">
+          <div className="flex items-center gap-6 p-4 rounded-2xl bg-white/[0.02] border border-white/10 text-xs reveal-scale">
             <div>
               <span className="font-mono text-xl font-bold text-white block">
                 {projects.length}
@@ -100,7 +100,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* Filter & Controls Toolbar */}
-        <div className="p-4 rounded-2xl bg-neutral-900/60 border border-white/10 mb-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        <div className="p-4 rounded-2xl bg-neutral-900/60 border border-white/10 mb-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 reveal">
           {/* Categories */}
           <div className="flex flex-wrap gap-2">
             {projectCategories.map((cat) => (
@@ -161,7 +161,7 @@ export default function PortfolioPage() {
         {/* GRID VIEW                                                                */}
         {/* ========================================================================= */}
         {viewMode === 'grid' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 reveal-stagger">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
@@ -248,7 +248,7 @@ export default function PortfolioPage() {
           /* ========================================================================= */
           /* LIST VIEW                                                                */
           /* ========================================================================= */
-          <div className="divide-y divide-white/10 border-t border-b border-white/10">
+          <div className="divide-y divide-white/10 border-t border-b border-white/10 reveal-stagger">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}

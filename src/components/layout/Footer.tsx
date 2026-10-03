@@ -35,7 +35,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Massive Callout */}
-        <div className="border-b border-white/10 pb-16">
+        <div className="border-b border-white/10 pb-16 reveal">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-6">
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* Global Studio Clocks */}
-        <div className="py-10 border-b border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+        <div className="py-10 border-b border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm reveal-stagger">
           <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5">
             <MapPin className="w-4 h-4 text-[#FF5E3A]" />
             <div>
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation & Links Grid */}
-        <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-white/10 text-xs">
+        <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-white/10 text-xs reveal-stagger">
           {/* Col 1: Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-flex items-center gap-1.5 mb-4 text-xl font-bold tracking-tight">

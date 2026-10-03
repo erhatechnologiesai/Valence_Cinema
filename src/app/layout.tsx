@@ -3,6 +3,8 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { SoundProvider } from '@/components/audio/SoundController';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import ScrollObserver from '@/components/ui/ScrollObserver';
 
 export const metadata: Metadata = {
   title: 'Poppy Productions | Creative Films & Brand Stories',
@@ -34,6 +36,8 @@ export default function RootLayout({
     <html lang="en" className="dark bg-[#08080a] text-zinc-100">
       <body className="min-h-screen bg-[#08080a] text-zinc-100 selection:bg-[#ff5e3a] selection:text-white flex flex-col justify-between">
         <SoundProvider>
+          <ScrollProgress />
+          <ScrollObserver />
           <Navbar />
           <main className="flex-grow pt-0">{children}</main>
           <Footer />
