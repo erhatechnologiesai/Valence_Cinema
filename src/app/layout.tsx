@@ -5,24 +5,22 @@ import Footer from '@/components/layout/Footer';
 import { SoundProvider } from '@/components/audio/SoundController';
 
 export const metadata: Metadata = {
-  title: 'VALENCE CINEMA | Next-Gen Scene Production & Brand Films',
+  title: 'Poppy Productions | Creative Films & Brand Stories',
   description:
-    'Award-winning creative cinema studio & theatrical scene production house. Engineering 65mm large format cinema and brand narratives that command attention.',
+    'Award-winning creative film production studio & scene production house. We create films that command attention.',
   keywords: [
-    'Valence Cinema',
-    'Creative Scene Production',
+    'Poppy Productions',
+    'Creative Films',
+    'Brand Stories',
     'film production house',
     'creative cinema',
-    'theatrical brand films',
-    'commercial director',
-    'ARRI Alexa 65',
-    'Panavision anamorphic',
-    '4K cinematography'
+    'commercial production',
+    'brand films',
   ],
-  authors: [{ name: 'Valence Cinema' }],
+  authors: [{ name: 'Poppy Productions' }],
   openGraph: {
-    title: 'VALENCE CINEMA | Next-Gen Scene Production & Brand Films',
-    description: 'We Direct Cinema That Commands Attention. Large Format • Aerial FPV • 1000fps Macro.',
+    title: 'Poppy Productions | Creative Films & Brand Stories',
+    description: 'We Create Films That Command Attention. Commercials • Brand Stories • Creative Cinema.',
     type: 'website',
   },
 };

@@ -99,26 +99,22 @@ export default function Footer() {
         <div className="py-12 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-white/10 text-xs">
           {/* Col 1: Brand */}
           <div className="col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#FF5E3A] to-rose-600 flex items-center justify-center text-white">
-                <Film className="w-3.5 h-3.5" />
-              </div>
-              <span className="text-lg font-black tracking-tight text-white uppercase">
-                VALENCE<span className="text-[#FF5E3A] ml-0.5">.</span> CINEMA
-              </span>
+            <Link href="/" className="inline-flex items-center gap-1.5 mb-4 text-xl font-bold tracking-tight">
+              <span className="text-white">Poppy</span>
+              <span className="text-[#FF5E3A]">Productions</span>
             </Link>
             <p className="text-neutral-400 leading-relaxed max-w-sm mb-6">
-              Bespoke creative cinema studio & scene production collective. Operating globally across London, New York, and Tokyo. ARRI Alexa 65 & Panavision certified.
+              Award-winning creative film production studio & scene production collective. Creating films and commercial narratives that command attention.
             </p>
             <div className="flex items-center gap-3 text-neutral-400">
               <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-neutral-300">
                 4K UHD 60FPS
               </span>
               <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-neutral-300">
-                PANAVISION PRIMO
+                CINEMA EDIT
               </span>
               <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-neutral-300">
-                DOLBY VISION
+                HIGH FIDELITY
               </span>
             </div>
           </div>
@@ -165,7 +161,7 @@ export default function Footer() {
 
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© {new Date().getFullYear()} Valence Cinema Productions Ltd. All Rights Reserved. Award-Winning Creative Cinema Studio.</p>
+          <p>© {new Date().getFullYear()} Poppy Productions Ltd. All Rights Reserved. Award-Winning Creative Cinema Studio.</p>
           <div className="flex items-center gap-6">
             <span className="hover:text-neutral-400 cursor-pointer">Privacy Charter</span>
             <span className="hover:text-neutral-400 cursor-pointer">Terms of Commission</span>

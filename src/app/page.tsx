@@ -55,10 +55,10 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-[#08080a] text-zinc-100 overflow-hidden">
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION WITH CLEAN 4K MOUNTAIN VIDEO + ARRI VIEWFINDER HUD        */}
+      {/* 1. HERO SECTION WITH 4K VIDEO LOOP + POPPY PRODUCTIONS BRANDING           */}
       {/* ========================================================================= */}
       <section className="relative w-full h-screen flex flex-col justify-between overflow-hidden bg-black">
-        {/* Background Clean 4K Alpine Footage (User's creative_video_website.mp4) */}
+        {/* Background Clean 4K Video Loop (0-20.2s from latest_video) */}
         <video
           autoPlay
           loop
@@ -72,75 +72,53 @@ export default function HomePage() {
         </video>
 
         {/* Ultra-Smooth 120fps Anti-Gravity Canvas */}
-        <AntiGravityCanvas particleCount={40} interactive={true} />
+        <AntiGravityCanvas particleCount={30} interactive={true} />
 
         {/* Cinematic Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-black/30 to-black/60 pointer-events-none z-[12]" />
-        <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_40%,rgba(0,0,0,0.7)_100%] pointer-events-none z-[12]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-black/20 to-black/50 pointer-events-none z-[12]" />
 
-        {/* ARRI / Panavision Viewfinder HUD Overlay */}
-        <div className="absolute inset-6 sm:inset-10 pointer-events-none z-[15] flex flex-col justify-between text-[11px] font-mono text-white/50">
-          {/* Top Bar HUD */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping inline-block" />
-              <span className="font-bold text-white tracking-widest">● REC</span>
-              <span className="hidden sm:inline text-white/70">ARRI ALEXA 65</span>
-            </div>
-            <div className="flex items-center gap-4 text-white/70">
-              <span className="hidden md:inline">2.39:1 ANAMORPHIC</span>
-              <span className="text-[#FF5E3A] font-bold">4K DCI 60FPS</span>
-              <span>ISO 800</span>
-              <span className="hidden sm:inline">5600K</span>
-            </div>
-          </div>
-
-          {/* Center Crosshairs */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-25">
-            <div className="w-10 h-0.5 bg-white" />
-            <div className="h-10 w-0.5 bg-white absolute" />
-          </div>
-
-          {/* Bottom Bar HUD */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 text-white/60">
-              <span className="hidden sm:inline">SHUTTER 180.0°</span>
-              <span className="hidden md:inline">FPS 23.976</span>
-            </div>
-            <div className="font-mono text-white/90 tracking-widest text-xs bg-black/40 px-3 py-1 rounded backdrop-blur-sm border border-white/10">
-              TC {timecode}
-            </div>
-          </div>
+        {/* Center Floating Button: Experience With Sound (Matching Reference) */}
+        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+          <button
+            onClick={() => {
+              playUiClick();
+              toggleSound();
+            }}
+            className="pointer-events-auto px-6 py-3 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 hover:border-white/40 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider flex items-center gap-2.5 transition-all duration-300 hover:scale-105 shadow-2xl cursor-pointer"
+          >
+            {isPlaying ? (
+              <>
+                <Volume2 className="w-4 h-4 text-[#FF5E3A]" />
+                <span>Sound Active</span>
+              </>
+            ) : (
+              <>
+                <VolumeX className="w-4 h-4 text-neutral-300" />
+                <span>Experience With Sound</span>
+              </>
+            )}
+          </button>
         </div>
 
-        {/* Top Spacer for Navbar */}
+        {/* Top Spacer for Fixed Navbar */}
         <div className="h-24" />
 
-        {/* Hero Bottom Left Typography & Right Action Bar */}
+        {/* Hero Bottom Typography & Right Action Bar */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 w-full">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            {/* Left Content Area */}
+            {/* Left Content Area: Poppy Productions + Creative Films & Brand Stories */}
             <div className="max-w-2xl text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-[10px] uppercase font-bold tracking-widest text-[#FF5E3A] border border-white/15 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5E3A] animate-pulse" />
-                <span>Global Scene Production</span>
-                <span className="text-white/40">•</span>
-                <span className="text-neutral-300">Large Format 65mm</span>
-              </div>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[0.94] drop-shadow-2xl uppercase">
-                We Direct Films That <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400">
-                  Command Attention.
-                </span>
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#FF5E3A] block mb-2">
+                POPPY PRODUCTIONS
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
+                Creative Films <br />
+                & Brand Stories
               </h1>
-              <p className="text-neutral-300 text-xs sm:text-sm md:text-base mt-4 max-w-xl leading-relaxed drop-shadow font-normal">
-                Bespoke cinematic architecture for category-defining brands. Merging raw high-altitude cinematography, extreme 1,000fps macro physics, and deep human truth.
-              </p>
             </div>
 
-            {/* Right Action Bar: Play Showreel + Theatrical Sound + Scroll Down */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              {/* Play Showreel Button */}
+            {/* Right Action Bar: Play Showreel + Scroll Down */}
+            <div className="flex items-center gap-3 sm:gap-4">
               <button
                 onClick={() => openModal(projects[0])}
                 className="px-6 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-xl"
@@ -149,44 +127,10 @@ export default function HomePage() {
                 <span>Play Showreel</span>
               </button>
 
-              {/* Theatrical Sound Button (Shifted from center to here) */}
-              <button
-                onClick={() => {
-                  playUiClick();
-                  toggleSound();
-                }}
-                className={`group px-5 py-3.5 rounded-full backdrop-blur-xl border transition-all duration-300 flex items-center gap-2.5 text-xs uppercase tracking-wider font-bold cursor-pointer ${
-                  isPlaying
-                    ? 'bg-rose-500/20 border-rose-500/50 text-rose-300 shadow-lg shadow-rose-500/25'
-                    : 'bg-black/60 border-white/20 text-neutral-300 hover:text-white hover:border-[#FF5E3A] hover:bg-black/80'
-                }`}
-                title={isPlaying ? 'Mute Theatrical Audio' : 'Play Theatrical Audio'}
-              >
-                <div className="relative flex items-center justify-center">
-                  <span
-                    className={`w-2 h-2 rounded-full ${
-                      isPlaying ? 'bg-[#FF5E3A] animate-ping' : 'bg-white/60'
-                    }`}
-                  />
-                  <span
-                    className={`absolute w-1.5 h-1.5 rounded-full ${
-                      isPlaying ? 'bg-[#FF5E3A]' : 'bg-white'
-                    }`}
-                  />
-                </div>
-                <span>{isPlaying ? 'Sound Active' : 'Sound Off'}</span>
-                {isPlaying ? (
-                  <Volume2 className="w-3.5 h-3.5 text-[#FF5E3A]" />
-                ) : (
-                  <VolumeX className="w-3.5 h-3.5 text-neutral-400" />
-                )}
-              </button>
-
-              {/* Scroll Down Chevron */}
               <a
-                href="#selected-work"
+                href="#manifesto"
                 className="w-11 h-11 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:border-[#FF5E3A] transition-colors"
-                aria-label="Scroll to Projects"
+                aria-label="Scroll to Next Section"
               >
                 <ChevronDown className="w-4 h-4" />
               </a>
@@ -196,49 +140,39 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. ELEVATED KINETIC MANIFESTO SEQUENCE                                   */}
+      {/* 2. MANIFESTO SEQUENCE (Matching Reference Video)                          */}
       {/* ========================================================================= */}
-      <section className="relative py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5 overflow-hidden">
+      <section id="manifesto" className="relative py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-orange-600/10 via-rose-600/10 to-transparent blur-[160px] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-10">
-          <div className="space-y-4">
-            <p className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-500 uppercase transition-all duration-700 hover:text-neutral-300">
-              The World Is Drowning In Disposable Content.
-            </p>
-            <p className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight uppercase">
-              <span className="text-white">We Direct </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400 drop-shadow-[0_0_40px_rgba(255,94,58,0.4)]">
-                Enduring Cinema.
-              </span>
-            </p>
-          </div>
+        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+            Most Brands <br />
+            <span className="text-[#FF5E3A]">Create Content.</span> <br />
+            We Create Films <br />
+            <span>That Command Attention.</span>
+          </h2>
 
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#FF5E3A] to-transparent mx-auto" />
-
-          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] font-semibold text-neutral-400 max-w-xl mx-auto">
-            VISION. DEPTH. SCALE. <br />
-            <span className="text-white font-black tracking-[0.4em]">WE IMMORTALIZE BRANDS ON FILM.</span>
-          </p>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#FF5E3A] to-transparent mx-auto mt-6" />
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. SELECTED WORK SHOWCASE (LAG-FREE HOVER PLAYBACK)                       */}
+      {/* 3. SELECTED WORK SHOWCASE (Matching Reference Video)                      */}
       {/* ========================================================================= */}
       <section id="selected-work" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#08080a]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
-                CURATED FILM ARCHIVE
+              <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
+                SELECTED WORK
               </span>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
-                Featured Showreel & Films
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+                Our Projects
               </h2>
               <p className="text-neutral-400 text-sm sm:text-base mt-2">
-                Stories that moved audiences. Campaigns that redefined industries.
+                Stories that moved audiences. Campaigns that moved markets.
               </p>
             </div>
 
