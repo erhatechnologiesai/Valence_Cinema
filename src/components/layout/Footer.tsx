@@ -83,8 +83,12 @@ export default function Footer() {
           <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5">
             <Clock className="w-5 h-5 text-[#FF5E3A] shrink-0" />
             <div>
-              <span className="text-xs uppercase tracking-wider text-neutral-400 block font-semibold">Studio Time (PKT)</span>
-              <span className="font-mono text-base font-bold text-white">{localTime || 'Live PKT'}</span>
+              <span className="text-xs uppercase tracking-wider text-neutral-400 block font-semibold">Studio Availability</span>
+              <div className="flex items-center gap-2 mt-0.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="text-sm font-bold text-white">Open 24 Hours (24/7)</span>
+                {localTime && <span className="text-xs font-mono text-neutral-400">({localTime})</span>}
+              </div>
             </div>
           </div>
         </div>

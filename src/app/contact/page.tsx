@@ -22,7 +22,7 @@ const studioLocations = [
     phoneLink: 'tel:03000288060',
     whatsappLink: 'https://wa.me/923000288060',
     email: 'info@poppyproductions.pk',
-    hours: 'Mon - Sat, 10:00 - 20:00 PKT',
+    hours: 'Open 24 Hours (24/7) — Round-the-Clock Production',
   },
 ];
 
