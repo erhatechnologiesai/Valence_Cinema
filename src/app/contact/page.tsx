@@ -46,11 +46,40 @@ export default function ContactPage() {
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     playUiClick();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          department,
+          message,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || 'Failed to submit inquiry');
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Error transmitting message';
+      setError(msg);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -196,12 +225,19 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {error && (
+                  <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs leading-relaxed">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-[#FF5E3A] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-orange-500/20 active:scale-95 cursor-pointer"
+                  disabled={loading}
+                  className="w-full py-4 rounded-xl bg-[#FF5E3A] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-orange-500/20 active:scale-95 cursor-pointer"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Transmit Inquiry to Producers</span>
+                  <Send className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+                  <span>{loading ? 'Transmitting Inquiry to Producers...' : 'Transmit Inquiry to Producers'}</span>
                 </button>
               </form>
             )}

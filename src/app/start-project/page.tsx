@@ -88,6 +88,8 @@ export default function StartProjectPage() {
   const [brandName, setBrandName] = useState('');
   const [projectBrief, setProjectBrief] = useState('');
   const [isCompleted, setIsCompleted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const toggleDeliverable = (item: string) => {
     playUiClick();
@@ -112,20 +114,51 @@ export default function StartProjectPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     playWhoosh();
+    setLoading(true);
+    setError(null);
 
     try {
-      confetti({
-        particleCount: 120,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#ff5e3a', '#f59e0b', '#ffffff'],
+      const res = await fetch('/api/start-project', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          projectType: selectedFormat,
+          services: selectedDeliverables,
+          budget: selectedBudget,
+          timeline: selectedTimeline,
+          contact: {
+            fullName: clientName,
+            email: clientEmail,
+            company: brandName,
+            projectDetails: projectBrief,
+          },
+        }),
       });
-    } catch {}
 
-    setIsCompleted(true);
+      const data = await res.json();
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || 'Failed to submit brief');
+      }
+
+      try {
+        confetti({
+          particleCount: 120,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#ff5e3a', '#f59e0b', '#ffffff'],
+        });
+      } catch {}
+
+      setIsCompleted(true);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Error submitting brief';
+      setError(msg);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -452,12 +485,19 @@ export default function StartProjectPage() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs leading-relaxed">
+                      {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-[#FF5E3A] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-xl shadow-orange-500/25 active:scale-95 cursor-pointer"
+                    disabled={loading}
+                    className="w-full py-4 rounded-xl bg-[#FF5E3A] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-xl shadow-orange-500/25 active:scale-95 cursor-pointer"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Lock In Brief & Dispatch to Studio Board</span>
+                    <Send className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+                    <span>{loading ? 'Transmitting Commission Brief...' : 'Lock In Brief & Dispatch to Studio Board'}</span>
                   </button>
                 </form>
               )}
