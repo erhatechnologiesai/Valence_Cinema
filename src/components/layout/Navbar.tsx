@@ -157,7 +157,7 @@ export default function Navbar() {
               );
             })}
           </nav>
-          <div className="pt-3 border-t border-white/10">
+          <div className="pt-3 border-t border-white/10 space-y-3">
             <Link
               href="/start-project"
               onClick={() => setMobileMenuOpen(false)}
@@ -165,6 +165,34 @@ export default function Navbar() {
             >
               Start Project
             </Link>
+            <div className="flex items-center justify-between pt-1 text-xs text-neutral-400">
+              <a
+                href="tel:03000288060"
+                className="hover:text-white flex items-center gap-1.5 font-mono font-bold text-neutral-300"
+              >
+                <span>Call: 03000288060</span>
+              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/poppyproductions22/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pink-500 transition-colors"
+                  aria-label="Instagram"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://web.facebook.com/profile.php?id=61588100360036"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-500 transition-colors"
+                  aria-label="Facebook"
+                >
+                  Facebook
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       )}
