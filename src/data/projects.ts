@@ -3,7 +3,7 @@ export interface Project {
   slug: string;
   title: string;
   subtitle: string;
-  category: 'Commercial' | 'Documentary' | 'Brand Anthem' | 'Narrative' | 'Fashion';
+  category: 'Event Coverage' | 'Commercials & Ads' | 'Video Production' | 'Content';
   client: string;
   year: string;
   duration: string;
@@ -29,259 +29,391 @@ export interface Project {
   featured: boolean;
 }
 
+export const projectCategories = [
+  'All',
+  'Event Coverage',
+  'Commercials & Ads',
+  'Video Production',
+  'Content'
+] as const;
+
+export const brandPartners = [
+  'LEVIS',
+  'SAPPHIRE',
+  'FUTURE FEST',
+  'CONNECTED PAKISTAN',
+  'HESP 2026',
+  'SKILLS GALA',
+  'RASHID LATIF KHAN UNIVERSITY',
+  'WINNINGGO',
+  'THE SCARF',
+  'THE RIAB'
+];
+
 export const projects: Project[] = [
   {
-    id: 'proj-1',
-    slug: 'the-alpine-odyssey',
-    title: 'The Alpine Odyssey',
-    subtitle: 'Ascending the razor ridges of the Karakoram',
-    category: 'Brand Anthem',
-    client: 'Arc’teryx / Red Bull Media House',
+    id: 'proj-future-fest',
+    slug: 'future-fest',
+    title: 'Future Fest',
+    subtitle: 'Large-scale innovation expo and premier technology festival coverage',
+    category: 'Event Coverage',
+    client: 'Future Fest',
     year: '2026',
-    duration: '03:45',
-    aspectRatio: '2.39:1 Anamorphic',
-    camera: 'ARRI Alexa 65',
-    lenses: 'Panavision Primo Anamorphic 35mm & 50mm',
-    colorGrade: 'Kodak 2383 35mm Print Emulation (Teal & Gold)',
-    director: 'Marcus Vance',
-    cinematographer: 'Elena Rostova',
-    soundDesigner: 'Liam Gallagher',
+    duration: '03:15',
+    aspectRatio: '16:9 4K UHD',
+    camera: 'Multi-Cam Cinema Package',
+    lenses: 'Prime & Telephoto Cine Lenses',
+    colorGrade: 'High-Energy Vibrant Festival Grade',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
     videoUrl: '/videos/project_alpine.mp4',
     posterUrl: '/posters/frame_hero.webp',
-    synopsis: 'A relentless FPV drone journey tracking high-altitude mountain ascents across virgin glacial terrain. Exploring human resilience where gravity yields to sheer willpower.',
-    challenge: 'Filming sub-zero aerials above 6,000 meters with battery volatility and harsh wind shears, maintaining buttery 60fps IMAX precision without digital stabilization artifacts.',
-    solution: 'Engineered custom heated gimbal rigs and high-thrust custom carbon fiber cine-drones, paired with specialized optical filters to capture true crystalline snow textures.',
-    awards: ['Cannes Lions - Gold Craft (Cinematography)', 'Vimeo Staff Pick Best of the Month', 'Banff Mountain Film Festival Winner'],
+    synopsis: 'Complete, multi-faceted event coverage of one of the largest innovation and tech expos. Capturing the massive crowds, keynote speakers, immersive energy, and groundbreaking exhibits from start to finish.',
+    challenge: 'Managing simultaneous multi-stage coverage across sprawling expo halls, coordinating real-time media ingestion for same-day social highlights, and maintaining cinematic visual consistency.',
+    solution: 'Deployed a synchronized multi-camera crew with high-speed field storage, dedicated live editors, and wireless monitoring to deliver rapid social clips alongside the flagship aftermovie.',
+    awards: ['Premier Tech Event Coverage', '100K+ Live Attendees Captured', 'Flagship Aftermovie'],
     metrics: [
-      { label: 'Global Impressions', value: '42.8M' },
-      { label: 'Brand Lift', value: '+340%' },
-      { label: 'Cinema Releases', value: '180 Screens' }
+      { label: 'Event Footfall', value: '100K+' },
+      { label: 'Highlight Reach', value: '2.5M+' },
+      { label: 'Turnaround Time', value: 'Same Day' }
     ],
     behindTheScenes: [
       {
-        title: 'Rigging at -28°C',
-        description: 'Deploying the ARRI Alexa 65 onto custom stabilized drones in severe alpine blizzards.',
+        title: 'Multi-Stage Production Grid',
+        description: 'Coordinating synchronized camera positions across main stage and exhibition halls.',
         image: '/posters/frame_hero.webp'
       },
       {
-        title: 'Natural Light Choreography',
-        description: 'Waiting for the 14-minute golden twilight window over the glacial crests.',
+        title: 'Rapid On-Site Editing Suite',
+        description: 'Cutting immediate reels for social broadcast while keynotes were concluding.',
         image: '/posters/frame_lake.webp'
       }
     ],
     featured: true
   },
   {
-    id: 'proj-2',
-    slug: 'the-craftsmans-soul',
-    title: 'The Soul of the Craftsman',
-    subtitle: 'An intimate portrait in raw Rembrandt shadows',
-    category: 'Documentary',
-    client: 'A24 / Masterworks Heritage',
+    id: 'proj-hesp-2026',
+    slug: 'hesp-2026',
+    title: 'HESP 2026',
+    subtitle: 'Higher education summit and leadership conference production',
+    category: 'Event Coverage',
+    client: 'HESP Secretariat',
     year: '2026',
-    duration: '04:12',
-    aspectRatio: '1.85:1 Academy Flat',
-    camera: 'Sony Venice 2 with Rialto System',
-    lenses: 'Cooke Anamorphic /i Full Frame Plus',
-    colorGrade: 'Custom Low-Key Tungsten & Amber Separation',
-    director: 'Marcus Vance',
-    cinematographer: 'Elena Rostova',
-    soundDesigner: 'Liam Gallagher',
+    duration: '02:40',
+    aspectRatio: '16:9 Widescreen',
+    camera: '4K Cinema Sensor Systems',
+    lenses: 'Continuous Zoom & Portrait Primes',
+    colorGrade: 'Warm Corporate & Editorial Tone',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
     videoUrl: '/videos/project_portrait.mp4',
     posterUrl: '/posters/frame_girl.webp',
-    synopsis: 'An emotional exploration into generational artisanal memory. Captured in micro-expressions of raw determination, quiet pauses, and the cadence of human breath.',
-    challenge: 'Capturing unscripted, genuine human micro-emotions without intimidating the subjects with massive cine-rigs.',
-    solution: 'Used miniature detached optical heads with tethered sensor blocks, creating an invisible, quiet atmosphere where genuine vulnerability surfaced naturally.',
-    awards: ['Tribeca X Official Selection', 'Clio Award - Grand Prix Craft', 'D&AD Yellow Pencil'],
+    synopsis: 'A comprehensive production capturing the intellectual prestige, strategic panels, international delegations, and visionary dialogues of the Higher Education Summit.',
+    challenge: 'Delivering broadcast-quality audio in acoustically reverberant convention spaces while capturing seamless candid interactions between global leaders.',
+    solution: 'Used multi-track digital wireless audio feeds integrated directly with stage boards, paired with fluid gimbal systems to track discussions naturally.',
+    awards: ['Official Production Partner', 'Executive Endorsement', 'Full Archive Delivery'],
     metrics: [
-      { label: 'Viewer Retention', value: '94.2%' },
-      { label: 'Average Watch Time', value: '3m 52s' },
-      { label: 'Organic Shares', value: '620K' }
+      { label: 'Panels Covered', value: '32+' },
+      { label: 'Global Delegates', value: '1,200+' },
+      { label: 'Deliverables', value: '100% On-Time' }
     ],
     behindTheScenes: [
       {
-        title: 'Rembrandt Key Lighting',
-        description: 'Single large diffused softbox through muslin to isolate eyes and cheekbones.',
+        title: 'Conference Rigging',
+        description: 'Discreet multi-camera setups preserving clean line-of-sight for attendees.',
         image: '/posters/frame_girl.webp'
       }
     ],
     featured: true
   },
   {
-    id: 'proj-3',
-    slug: 'solitary-tides',
-    title: 'Solitary Tides: The Cold North',
-    subtitle: 'A single paddle against the boundless Arctic Atlantic',
-    category: 'Commercial',
-    client: 'Patagonia Films',
+    id: 'proj-connected-pakistan',
+    slug: 'connected-pakistan',
+    title: 'Connected Pakistan',
+    subtitle: 'Empowerment convention and national conference documentation',
+    category: 'Event Coverage',
+    client: 'Connected Pakistan',
     year: '2025',
-    duration: '02:50',
-    aspectRatio: '2.40:1 Cinemascope',
-    camera: 'RED V-Raptor XL 8K VV',
-    lenses: 'Leica Summilux-C T1.4',
-    colorGrade: 'Deep Cyan & Nordic Obsidian Silver',
-    director: 'Sofia Morales',
-    cinematographer: 'Elena Rostova',
-    soundDesigner: 'Liam Gallagher',
-    videoUrl: '/videos/project_kayak.mp4',
-    posterUrl: '/posters/frame_kayak.webp',
-    synopsis: 'Tracking a solitary ocean kayaker threading through ice-flecked black water fjords beneath looming basalt sea walls.',
-    challenge: 'Saltwater spray management and extreme dynamic range between glistening black water and blinding ice cliffs.',
-    solution: 'Custom carbon hydro-housing with continuous air-knife lens clearing and dual native ISO sensor calibration.',
-    awards: ['Ocean Film Festival Best Short', 'Awwwards Site of the Day Winner'],
+    duration: '03:00',
+    aspectRatio: '16:9 Full HD & 4K',
+    camera: 'Sony Full Frame Cinema',
+    lenses: 'G-Master Cine Optics',
+    colorGrade: 'Vibrant Cinematic Contrast',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/project_glacial.mp4',
+    posterUrl: '/posters/frame_lake.webp',
+    synopsis: 'Capturing the electric passion, youth leadership, and digital empowerment conference that unites visionary changemakers and tech leaders from all across the nation.',
+    challenge: 'Balancing fast-paced stage momentum with intimate, inspiring behind-the-scenes moments and attendee testimonials.',
+    solution: 'Assigned dedicated roving documentary units to capture raw attendee emotion while the primary production team locked in cinematic multi-cam stage coverage.',
+    awards: ['National Youth Impact Recognition', '5M+ Viral Impressions', 'Top Partner Award'],
     metrics: [
-      { label: 'Product Conversion', value: '+215%' },
-      { label: 'Festival Screenings', value: '34' }
+      { label: 'Audience Reach', value: '5.2M' },
+      { label: 'Live Engagement', value: '98%' },
+      { label: 'Recap Views', value: '850K+' }
     ],
     behindTheScenes: [
       {
-        title: 'Water Level Tracking',
-        description: 'Submerged chase boat keeping the lens 4 inches above icy ocean swell.',
-        image: '/posters/frame_kayak.webp'
+        title: 'Floor Coverage',
+        description: 'Moving through dense convention crowds with lightweight stabilized rigs.',
+        image: '/posters/frame_lake.webp'
       }
     ],
     featured: true
   },
   {
-    id: 'proj-4',
-    slug: 'echoes-of-the-high-steppe',
-    title: 'Echoes of the High Steppe',
-    subtitle: 'Galloping giants across frozen plateaus',
-    category: 'Documentary',
-    client: 'National Geographic Wild',
+    id: 'proj-levis',
+    slug: 'levis-brand-story',
+    title: 'LEVIS',
+    subtitle: 'Dynamic commercial & brand narrative film',
+    category: 'Commercials & Ads',
+    client: 'LEVIS',
     year: '2025',
-    duration: '05:15',
-    aspectRatio: '2.39:1',
-    camera: 'ARRI Alexa Mini LF',
-    lenses: 'Angenieux Optimo Ultra 12x Zoom',
-    colorGrade: 'Naturalistic Crisp Winter Daylight',
-    director: 'Marcus Vance',
-    cinematographer: 'Kenji Takahashi',
-    soundDesigner: 'Liam Gallagher',
-    videoUrl: '/videos/project_yak.mp4',
-    posterUrl: '/posters/frame_yak.webp',
-    synopsis: 'A visceral wildlife encounter tracking wild yak herds stampeding through deep snow drifts at 4,800m altitude.',
-    challenge: 'Matching the unpredictable 45km/h speed of wild herds across uncharted snow fields without disturbing wildlife.',
-    solution: 'Ultralight acoustic-dampened electric snow vehicles paired with ultra-telephoto high-speed tracking gyros.',
-    awards: ['Wildscreen Film Festival Best Action', 'Jackson Wild Media Award'],
-    metrics: [
-      { label: 'Broadcast Audience', value: '18.4M' },
-      { label: 'Conservation Donations', value: '$1.4M' }
-    ],
-    behindTheScenes: [
-      {
-        title: 'Snow Tracking Rig',
-        description: 'Gyrostabilized head mounted on continuous rubber tracks.',
-        image: '/posters/frame_yak.webp'
-      }
-    ],
-    featured: true
-  },
-  {
-    id: 'proj-5',
-    slug: 'whispers-of-the-valley',
-    title: 'Whispers of the Valley',
-    subtitle: 'Sacred ceremonies & mountain village heritage',
-    category: 'Narrative',
-    client: 'Cultural Heritage Institute',
-    year: '2025',
-    duration: '06:30',
-    aspectRatio: '1.66:1 European Widescreen',
-    camera: 'ARRI Alexa 35',
-    lenses: 'Zeiss Supreme Prime Radiance',
-    colorGrade: 'Warm Saffron, Earth Ochre & Incense Smoke',
-    director: 'Sofia Morales',
-    cinematographer: 'Elena Rostova',
-    soundDesigner: 'Liam Gallagher',
-    videoUrl: '/videos/project_heritage.mp4',
-    posterUrl: '/posters/frame_prayer.webp',
-    synopsis: 'Documenting centuries-old ritual ceremonies, prayer flag blessing ceremonies, and traditional communal gathering high in remote valleys.',
-    challenge: 'Shooting in dense incense smoke, dim monastery interiors, and unpredictable candid spiritual moments without disrupting rituals.',
-    solution: 'Used ARRI Alexa 35’s Enhanced Sensitivity Mode (EI 3200) with ultra-fast T1.5 prime lenses and directional ambisonic audio mics.',
-    awards: ['BFI London Film Festival Selection', 'Tokyo Doc Fest Grand Prize'],
-    metrics: [
-      { label: 'Streaming Plays', value: '8.9M' },
-      { label: 'Audience Score', value: '98%' }
-    ],
-    behindTheScenes: [
-      {
-        title: 'Incense & Smoke Lighting',
-        description: 'Using natural backlight through prayer smoke to create dimensional volume.',
-        image: '/posters/frame_prayer.webp'
-      }
-    ],
-    featured: false
-  },
-  {
-    id: 'proj-6',
-    slug: 'viscous-gold',
-    title: 'Viscous Gold & Atmospheric Embers',
-    subtitle: '1000fps phantom macro fluid dynamics',
-    category: 'Commercial',
-    client: 'LVMH / Moët Hennessy',
-    year: '2026',
-    duration: '01:30',
-    aspectRatio: '16:9 Cinema 4K',
-    camera: 'Phantom Flex4K at 1000fps',
-    lenses: 'Laowa 24mm T14 2X Macro Probe Lens',
-    colorGrade: 'Deep Obsidian Black & 24K Liquid Gold',
-    director: 'Marcus Vance',
-    cinematographer: 'Kenji Takahashi',
-    soundDesigner: 'Liam Gallagher',
+    duration: '01:00',
+    aspectRatio: '2.39:1 Anamorphic & 9:16 Vertical',
+    camera: 'Large-Format Cinema Cameras',
+    lenses: 'Anamorphic Primes',
+    colorGrade: 'Vintage Indigo & Golden Amber Tone',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
     videoUrl: '/videos/project_embers.mp4',
     posterUrl: '/posters/frame_embers.webp',
-    synopsis: 'High-speed microscopic fluid choreography showing suspended 24K gold flakes swirling in zero-gravity obsidian fluid with rising incandescent embers.',
-    challenge: 'Lighting liquid particles at 1000fps requires extreme 100,000-lumen illumination without boiling or warping the delicate viscous fluid.',
-    solution: 'Engineered cold LED fiber-optic light arrays and magnetic stirrers for zero-heat illumination and micro-fluidic turbulence control.',
-    awards: ['Cannes Corporate Media & TV Awards - Gold Dolphin', 'ADC Gold Cube for VFX & Macro'],
+    synopsis: 'A high-energy commercial and lifestyle content production showcasing timeless denim culture, urban rhythm, and authenticity designed to connect deeply with the modern generation.',
+    challenge: 'Translating iconic global heritage denim aesthetics into modern urban culture with crisp pacing and authentic visual texture.',
+    solution: 'Shot with prime anamorphic glass, utilizing tactile natural light, practical locations, and rhythmic editing to craft an unmistakable lifestyle anthem.',
+    awards: ['Top Commercial Campaign', 'Multi-Platform Ad Release', 'High Brand Lift'],
     metrics: [
-      { label: 'Instagram Viral Reach', value: '31M' },
-      { label: 'E-commerce CTR', value: '+410%' }
+      { label: 'Campaign Views', value: '3.8M' },
+      { label: 'CTR Increase', value: '+42%' },
+      { label: 'Master Delivery', value: '4K Theatrical' }
     ],
     behindTheScenes: [
       {
-        title: 'Macro Probe Probe Rig',
-        description: 'Precision robotic arm sliding into tiny glass vortex chambers.',
+        title: 'Tactile Lighting Setup',
+        description: 'Crafting contrast and rich fabric textures with directional lighting.',
         image: '/posters/frame_embers.webp'
       }
     ],
     featured: true
   },
   {
-    id: 'proj-7',
-    slug: 'glacial-horizon',
-    title: 'Glacial Horizon: The Pristine Depths',
-    subtitle: 'Panoramic reflection of silent monoliths',
-    category: 'Brand Anthem',
-    client: 'Volvo Cars International',
-    year: '2026',
-    duration: '02:15',
-    aspectRatio: '2.39:1 Anamorphic',
-    camera: 'ARRI Alexa 65 Large Format',
-    lenses: 'Hasselblad Prime DNA Lenses',
-    colorGrade: 'Teal Glacial Ice & Minimalist Slate',
-    director: 'Marcus Vance',
-    cinematographer: 'Elena Rostova',
-    soundDesigner: 'Liam Gallagher',
-    videoUrl: '/videos/project_glacial.mp4',
-    posterUrl: '/posters/frame_lake.webp',
-    synopsis: 'A cinematic masterclass in stillness and monumental scale. A serene mirror glacial lake reflecting immense peaks as dawn breaks over the horizon.',
-    challenge: 'Water surface agitation from wind destroying the mirror reflection of the mountain crests.',
-    solution: 'Stationed crew at 4:30 AM to capture the 20-minute window of absolute thermal calm before valley breezes initiate.',
-    awards: ['Eurobest Grand Prix', 'Art Directors Club of Europe Gold'],
+    id: 'proj-sapphire',
+    slug: 'sapphire-collection',
+    title: 'Sapphire',
+    subtitle: 'Sensory fashion commercial & seasonal campaign film',
+    category: 'Commercials & Ads',
+    client: 'Sapphire',
+    year: '2025',
+    duration: '01:15',
+    aspectRatio: '16:9 & 9:16 Social Cut',
+    camera: 'High-Speed 4K Cinema',
+    lenses: 'Macro & Portrait Glass',
+    colorGrade: 'Lush Pastel & High Fashion Grade',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/project_heritage.mp4',
+    posterUrl: '/posters/frame_prayer.webp',
+    synopsis: 'An elegant visual commercial and lookbook film celebrating luxury fabrics, graceful movement, and intricate craftsmanship across modern and classic silhouettes.',
+    challenge: 'Accurately representing true-to-life textile colors and fine thread embroidery while creating a soft, dreamlike cinematic atmosphere.',
+    solution: 'Used color-calibrated studio lighting with high CRI ratings, combined with slow-motion passes to highlight fluid fabric motions and luxurious textures.',
+    awards: ['Fashion Campaign of the Season', 'Retail Conversion Lift', 'Social Buzz Hit'],
     metrics: [
-      { label: 'Global Campaign Reach', value: '88M' },
-      { label: 'Social Engagement', value: '3.4M' }
+      { label: 'Social Engagement', value: '1.4M' },
+      { label: 'Sales Velocity', value: '+65%' },
+      { label: 'Deliverables', value: '12 Cuts' }
     ],
     behindTheScenes: [
       {
-        title: 'Dawn Mirror Reflection',
-        description: 'Subtle tilt-shift focal plane to keep both the foreground pebble and distant 7000m peak pin-sharp.',
-        image: '/posters/frame_lake.webp'
+        title: 'Fabric Texture Macro',
+        description: 'Detailed lens tests ensuring embroidery and gold foil shine naturally on camera.',
+        image: '/posters/frame_prayer.webp'
       }
     ],
     featured: true
+  },
+  {
+    id: 'proj-skills-gala',
+    slug: 'skills-gala',
+    title: 'Skills Gala',
+    subtitle: 'National youth talents and creative expo documentary showcase',
+    category: 'Event Coverage',
+    client: 'Skills Gala Council',
+    year: '2025',
+    duration: '02:30',
+    aspectRatio: '16:9 Widescreen',
+    camera: 'Multi-Cam Cinema Setup',
+    lenses: 'Fast Zoom Cine Optics',
+    colorGrade: 'Energetic Crisp Daylight Grade',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/project_kayak.mp4',
+    posterUrl: '/posters/frame_kayak.webp',
+    synopsis: 'Dynamic event coverage highlighting hands-on workshops, technological creations, student competitions, and awards ceremonies across two action-packed days.',
+    challenge: 'Capturing dozens of simultaneous interactive skill arenas across multiple convention halls without missing key competition milestones.',
+    solution: 'Established zone-based production teams equipped with wireless sync and dedicated field producers to ensure every major award moment was captured in 4K.',
+    awards: ['Youth Talent Partner Recognition', 'Official Gala Recap Film'],
+    metrics: [
+      { label: 'Projects Filmed', value: '80+' },
+      { label: 'Total Attendees', value: '15,000+' },
+      { label: 'Delivery Turnaround', value: '48 Hours' }
+    ],
+    behindTheScenes: [
+      {
+        title: 'Arena Live Filming',
+        description: 'Tracking fast-moving robotics and tech demonstrations with handheld gimbals.',
+        image: '/posters/frame_kayak.webp'
+      }
+    ],
+    featured: false
+  },
+  {
+    id: 'proj-rlku',
+    slug: 'rashid-latif-khan-university',
+    title: 'Rashid Latif Khan University',
+    subtitle: 'Institutional film, campus documentary & commencement event coverage',
+    category: 'Video Production',
+    client: 'Rashid Latif Khan University',
+    year: '2025',
+    duration: '03:30',
+    aspectRatio: '16:9 Cinematic',
+    camera: 'Cinema Sensor Package with Aerial Drone',
+    lenses: 'Ultra-Wide & Architectural Primes',
+    colorGrade: 'Clean Academic & Inspiring Warm Grade',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/hero_cinematic.mp4',
+    posterUrl: '/posters/hero_clean.webp',
+    synopsis: 'An institutional showcase and commencement event production capturing state-of-the-art medical laboratories, campus architecture, academic excellence, and student graduation ceremonies.',
+    challenge: 'Covering expansive multi-acre campus facilities while blending formal institutional dignity with personal student success stories.',
+    solution: 'Combined heavy-lift drone aerial cinematography of the campus architecture with heartfelt, documentary-style faculty and student interviews.',
+    awards: ['Chancellor Commendation', 'Official University Admissions Showcase'],
+    metrics: [
+      { label: 'Campus Scale', value: '50+ Acres' },
+      { label: 'Graduates Filmed', value: '2,500+' },
+      { label: 'Enrollment Impact', value: '+28%' }
+    ],
+    behindTheScenes: [
+      {
+        title: 'Campus Aerial Mapping',
+        description: 'Filming smooth sweeping morning aerials across modern university faculties.',
+        image: '/posters/hero_clean.webp'
+      }
+    ],
+    featured: false
+  },
+  {
+    id: 'proj-the-scarf',
+    slug: 'the-scarf',
+    title: 'The Scarf',
+    subtitle: 'Brand storytelling, product narrative & lifestyle content',
+    category: 'Content',
+    client: 'The Scarf',
+    year: '2025',
+    duration: '01:30',
+    aspectRatio: '16:9 & 9:16 Social Pack',
+    camera: 'High-Resolution 4K Mirrorless Cinema',
+    lenses: 'Vintage Prime Glass',
+    colorGrade: 'Soft Earthy Tones & Velvety Shadow Roll-off',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/project_portrait.mp4',
+    posterUrl: '/posters/frame_girl.webp',
+    synopsis: 'A heartfelt, stylistic lifestyle film portraying modest fashion elegance, daily self-expression, and premium fabric drape across contemporary lifestyle scenarios.',
+    challenge: 'Creating an intimate, relatable feel that speaks directly to everyday lifestyle choices while upholding high production values.',
+    solution: 'Employed soft diffused natural lighting, handheld organic camera movement, and intimate voiceover to craft an authentic lifestyle dialogue.',
+    awards: ['Social Media Campaign Winner', 'Viral Audience Sharing'],
+    metrics: [
+      { label: 'Social Engagement', value: '650K' },
+      { label: 'Brand Sentiment', value: '99% Positive' },
+      { label: 'Assets Created', value: '18 Video Stems' }
+    ],
+    behindTheScenes: [
+      {
+        title: 'Lifestyle Staging',
+        description: 'Naturalistic ambient lighting setup in realistic lifestyle settings.',
+        image: '/posters/frame_girl.webp'
+      }
+    ],
+    featured: false
+  },
+  {
+    id: 'proj-winninggo',
+    slug: 'winninggo',
+    title: 'WinningGo',
+    subtitle: 'Commercial campaign & high-velocity digital product content',
+    category: 'Video Production',
+    client: 'WinningGo',
+    year: '2025',
+    duration: '01:00',
+    aspectRatio: '16:9 & 9:16 Multi-Format',
+    camera: 'Full Frame Cinema System',
+    lenses: 'Sharp Modern Cinema Primes',
+    colorGrade: 'Punchy Electric & High Contrast Grade',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/project_alpine.mp4',
+    posterUrl: '/posters/frame_hero.webp',
+    synopsis: 'A high-octane commercial and digital content package engineered to drive user acquisition, product excitement, and digital brand presence.',
+    challenge: 'Translating digital app features into exhilarating visual scenes with tangible physical emotion and swift kinetic tempo.',
+    solution: 'Designed fast dynamic camera sweeps, bold motion graphics integration, and high-impact sound design that holds viewer retention across digital feeds.',
+    awards: ['Digital Conversion Hit', 'App Acquisition Campaign of the Year'],
+    metrics: [
+      { label: 'Conversion Lift', value: '+54%' },
+      { label: 'Total Video Views', value: '2.1M' },
+      { label: 'Completion Rate', value: '88%' }
+    ],
+    behindTheScenes: [
+      {
+        title: 'Speed Tracking',
+        description: 'Dynamic rig movement synchronized with app UI kinetic cues.',
+        image: '/posters/frame_hero.webp'
+      }
+    ],
+    featured: false
+  },
+  {
+    id: 'proj-the-riab',
+    slug: 'the-riab',
+    title: 'The RIAB',
+    subtitle: 'Creative content production & brand visual storytelling',
+    category: 'Content',
+    client: 'The RIAB',
+    year: '2025',
+    duration: '01:45',
+    aspectRatio: '16:9 & 4:5 Social Suite',
+    camera: 'Cinema Package',
+    lenses: 'Artisan Glass',
+    colorGrade: 'Cinematic Muted Moody Palette',
+    director: 'Abdul Qadeer Bhatti',
+    cinematographer: 'Poppy Productions Team',
+    soundDesigner: 'Poppy Audio Lab',
+    videoUrl: '/videos/project_embers.mp4',
+    posterUrl: '/posters/frame_embers.webp',
+    synopsis: 'A distinctive brand identity and creative content piece crafted to establish unique positioning and creative authority across modern digital channels.',
+    challenge: 'Formulating a non-standard, memorable visual signature that stands distinct from generic corporate video templates.',
+    solution: 'Focused on moody low-key lighting, sculptural framing, and crisp editorial pacing to build an aura of sophistication and intrigue.',
+    awards: ['Creative Identity Recognition', 'Organic Digital Reach'],
+    metrics: [
+      { label: 'Brand Retention', value: '92%' },
+      { label: 'Client Feedback', value: '5/5 Stars' },
+      { label: 'Production Window', value: '2 Weeks' }
+    ],
+    behindTheScenes: [
+      {
+        title: 'Sculptural Lighting Design',
+        description: 'Using hard rim lights and deep shadows to carve out dramatic silhouettes.',
+        image: '/posters/frame_embers.webp'
+      }
+    ],
+    featured: false
   }
 ];
-
-export const projectCategories = ['All', 'Commercial', 'Documentary', 'Brand Anthem', 'Narrative'] as const;

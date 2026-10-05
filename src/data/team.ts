@@ -2,7 +2,7 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  department: 'Direction' | 'Cinematography' | 'Color & Post' | 'Sound Design' | 'Production';
+  department: 'Leadership' | 'Direction' | 'Cinematography' | 'Color & Post' | 'Sound Design' | 'Production';
   bio: string;
   credits: string[];
   equipmentPreference: string;
@@ -10,71 +10,78 @@ export interface TeamMember {
   awards: string[];
 }
 
+export const leadershipInfo = {
+  headline: 'LED BY EXPERIENCE. BUILT FOR PRODUCTION.',
+  name: 'Abdul Qadeer Bhatti',
+  role: 'Founder & CEO',
+  bio: 'With 5 years of industry experience, Abdul Qadeer Bhatti founded Poppy Productions with a clear objective: to provide better-quality productions and build a full-service production company. Poppy brings together a team with more than 10 years of collective experience, combining production expertise with a practical understanding of the demands of modern media.'
+};
+
 export const teamMembers: TeamMember[] = [
   {
-    id: 'marcus-vance',
-    name: 'Marcus Vance',
-    role: 'Founder & Executive Creative Director',
-    department: 'Direction',
-    bio: 'Former documentary director for National Geographic and commercial visionary. Marcus combines cinematic realism with high-impact brand narrative arcs.',
-    credits: ['Arc’teryx Alpine Odyssey', 'LVMH Viscous Gold', 'Volvo Glacial Horizon'],
-    equipmentPreference: 'ARRI Alexa 65 / Panavision Anamorphic 35mm',
+    id: 'abdul-qadeer-bhatti',
+    name: 'Abdul Qadeer Bhatti',
+    role: 'Founder & CEO',
+    department: 'Leadership',
+    bio: 'With 5 years of industry experience, Abdul Qadeer Bhatti founded Poppy Productions to deliver better-quality productions. He leads the company with a hands-on approach from initial client vision to final execution.',
+    credits: ['Future Fest', 'Connected Pakistan', 'LEVIS Campaign', 'HESP 2026', 'Sapphire'],
+    equipmentPreference: 'Cinema Packages & Multi-Cam Event Rigs',
     image: '/posters/frame_proj4.webp',
-    awards: ['Cannes Lions Gold', 'D&AD Yellow Pencil', 'Vimeo Best of Year']
+    awards: ['5 Years Industry Leadership', 'Over 100+ Completed Productions', 'Founding Director']
   },
   {
-    id: 'elena-rostova',
-    name: 'Elena Rostova',
-    role: 'Director of Photography (DoP)',
-    department: 'Cinematography',
-    bio: 'Renowned for painterly Rembrandt natural lighting, sub-zero expedition cinematography, and tactile macro compositions.',
-    credits: ['The Soul of the Craftsman', 'Patagonia Solitary Tides', 'Alpine Odyssey'],
-    equipmentPreference: 'Cooke Anamorphic /i Full Frame & Leica Summilux-C',
-    image: '/posters/frame_girl.webp',
-    awards: ['BSC Best Cinematography in Commercial', 'Clio Grand Prix']
-  },
-  {
-    id: 'kenji-takahashi',
-    name: 'Kenji Takahashi',
-    role: 'Master Colorist & Finishing Artist',
-    department: 'Color & Post',
-    bio: 'Specialist in custom film emulation LUT creation, Kodak 2383/5219 grain profiles, and high dynamic range Dolby Vision master grading.',
-    credits: ['National Geographic Echoes', 'Moët Hennessy Macro Series', 'Midnight Sprint'],
-    equipmentPreference: 'DaVinci Resolve Advanced Panel & Sony BVM-HX310 Master Monitor',
-    image: '/posters/frame_proj5.webp',
-    awards: ['FilmLight Color Awards Winner', 'Awwwards Site of the Day']
-  },
-  {
-    id: 'sofia-morales',
-    name: 'Sofia Morales',
-    role: 'Head of Production & Executive Producer',
+    id: 'production-lead',
+    name: 'Senior Production Producer',
+    role: 'Head of Production & Logistics',
     department: 'Production',
-    bio: 'Over 14 years managing remote logistics across 26 countries, from Karakoram base camps to hyper-controlled high-speed studio stages.',
-    credits: ['Whispers of the Valley', 'Solitary Tides', 'Volvo Global Launch'],
-    equipmentPreference: 'Satellite Comms & Multi-Unit Remote Stream Command',
+    bio: '10+ years of individual experience managing end-to-end production pipelines, large-scale expos, multi-camera live setups, and on-schedule execution.',
+    credits: ['Future Fest Expo', 'Skills Gala', 'Rashid Latif Khan University', 'HESP 2026'],
+    equipmentPreference: 'Multi-Unit Production Management & Live Comms',
     image: '/posters/frame_proj6.webp',
-    awards: ['PGA Producer of Excellence', 'Cannes Corporate Gold Dolphin']
+    awards: ['10+ Years Industry Experience', 'Large-Scale Expo Lead']
   },
   {
-    id: 'liam-gallagher',
-    name: 'Liam Gallagher',
-    role: 'Lead Sound Designer & Film Composer',
-    department: 'Sound Design',
-    bio: 'Creating visceral acoustic landscapes through custom modular analog synthesizers, ambisonic binaural field recordings, and sub-bass textures.',
-    credits: ['Alpine Odyssey Soundscape', 'The Craftsman Ambisonics', 'LVMH Sonic Identity'],
-    equipmentPreference: 'Sennheiser AMBEO VR Mic & Sequential Prophet-6 Synth',
-    image: '/posters/frame_proj7.webp',
-    awards: ['Grammy Nominated Sound Editor', 'Music+Sound Awards Best Sound Design']
-  },
-  {
-    id: 'tariq-ahmed',
-    name: 'Tariq Ahmed',
-    role: 'Lead FPV Cine-Drone Pilot & Aerial DP',
+    id: 'director-cinematography',
+    name: 'Director of Photography (DoP)',
+    role: 'Lead Cinematographer',
     department: 'Cinematography',
-    bio: 'Pioneering heavy-lift cinelifter FPV drone flights carrying full cinema packages through alpine canyons and narrow urban gaps.',
-    credits: ['Alpine Odyssey Karakoram Dive', 'Tokyo Midnight Sprint', 'Red Bull Mountain Chase'],
-    equipmentPreference: 'Custom 10-inch X8 Cinelifter with Freefly Ember & RED Raptor',
+    bio: 'Crafting powerful visual language for commercial films, ad campaigns, and dynamic event coverage with cinema optics and professional lighting.',
+    credits: ['LEVIS Commercial', 'Sapphire Film', 'WinningGo', 'The Scarf'],
+    equipmentPreference: 'Full-Frame Cinema Cameras & Prime Lenses',
     image: '/posters/frame_hero.webp',
-    awards: ['New York Drone Film Festival Winner', 'X-Games Aerial Excellence']
+    awards: ['Best Commercial Cinematography', 'High-Dynamic Range Specialist']
+  },
+  {
+    id: 'lead-editor-post',
+    name: 'Post-Production Lead',
+    role: 'Senior Video Editor & Colorist',
+    department: 'Color & Post',
+    bio: 'Turning recorded footage into structured, engaging, and polished content with seamless pacing, look development, and broadcast-ready finishing.',
+    credits: ['Connected Pakistan Recaps', 'The RIAB Content', 'LEVIS Commercial Cut', 'Future Fest Reels'],
+    equipmentPreference: 'DaVinci Resolve Studio & Premiere Pro Suites',
+    image: '/posters/frame_proj5.webp',
+    awards: ['Senior Post-Production Specialist', 'Speed & Precision Editor']
+  },
+  {
+    id: 'motion-designer',
+    name: 'Lead Motion Designer',
+    role: 'Motion Graphics & Visual FX Artist',
+    department: 'Direction',
+    bio: 'Specializing in motion graphics, kinetic typography, 3D visual elements, and brand identity animations that add clarity and impact.',
+    credits: ['Skills Gala Openers', 'WinningGo Brand Motion', 'Future Fest Screen Visuals'],
+    equipmentPreference: 'After Effects, Cinema 4D & Blender Pipeline',
+    image: '/posters/frame_girl.webp',
+    awards: ['Interactive Visual Design', 'Motion Brand Architecture']
+  },
+  {
+    id: 'sound-engineer',
+    name: 'Audio Director',
+    role: 'Sound Designer & Audio Engineer',
+    department: 'Sound Design',
+    bio: 'Ensuring pristine audio fidelity, dialogue clarity, immersive sound design, and impact for ad films and live event broadcasts.',
+    credits: ['Commercial Soundtracks', 'Live Event Sound Stems', 'Narrative Brand Mixes'],
+    equipmentPreference: 'Pro Tools & Genelec Spatial Monitors',
+    image: '/posters/frame_proj7.webp',
+    awards: ['Broadcast Sound Standards', 'Acoustic Clarity Lead']
   }
 ];

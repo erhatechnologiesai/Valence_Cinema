@@ -1,87 +1,24 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import {
-  Film,
+  Sparkles,
   Camera,
   Layers,
-  Award,
-  Sparkles,
-  ArrowRight,
   ShieldCheck,
+  CheckCircle2,
+  Users,
   Compass,
-  Cpu,
+  ArrowRight,
+  Zap,
+  Clock,
+  Expand
 } from 'lucide-react';
 import AntiGravityCanvas from '@/components/canvas/AntiGravityCanvas';
 import { useSound } from '@/components/audio/SoundController';
-
-const milestones = [
-  {
-    year: '2018',
-    title: 'Studio Inception in London Soho',
-    desc: 'Founded by documentary director Marcus Vance with a single ARRI camera package and a conviction that commercial filmmaking lacked visceral human soul.',
-  },
-  {
-    year: '2020',
-    title: 'First Cannes Lions Gold Craft',
-    desc: 'Awarded for groundbreaking sub-zero mountain cinematography in the Karakoram range for Arc’teryx.',
-  },
-  {
-    year: '2022',
-    title: 'Expansion to New York & Tokyo',
-    desc: 'Established state-of-the-art DaVinci color grading suites and high-speed Phantom macro stages in Brooklyn and Shibuya.',
-  },
-  {
-    year: '2024',
-    title: 'Pioneering Heavy-Lift FPV Drone Cinema',
-    desc: 'Engineered custom cinelifters capable of carrying full ARRI Alexa 65 packages through severe alpine environments.',
-  },
-  {
-    year: '2026',
-    title: 'Next-Gen Anti-Gravity Platform',
-    desc: 'Merging real-time WebGL physics, spatial ambisonics, and 4K HDR digital streaming for interactive brand worlds.',
-  },
-];
-
-const cineGear = [
-  {
-    category: 'Camera Systems',
-    items: [
-      'ARRI Alexa 65 (Large Format 65mm Sensor)',
-      'Sony Venice 2 with Rialto Detached Block',
-      'Phantom Flex4K (1,000 fps high-speed macro)',
-      'RED V-Raptor XL 8K VV',
-    ],
-  },
-  {
-    category: 'Anamorphic & Prime Optics',
-    items: [
-      'Panavision Primo Anamorphic 35mm / 50mm / 75mm',
-      'Cooke Anamorphic /i Full Frame Plus',
-      'Leica Summilux-C T1.4 Primes',
-      'Laowa 24mm T14 2X Macro Probe Lens',
-    ],
-  },
-  {
-    category: 'Finishing & Sound Engineering',
-    items: [
-      'DaVinci Resolve Studio Advanced Hardware Panels',
-      'Sony BVM-HX310 4K HDR 1000-nit Master Monitors',
-      'Dolby Atmos 7.1.4 Spatial Genelec SAM Monitors',
-      'Sequential Prophet-6 & Moog Analog Synthesizers',
-    ],
-  },
-  {
-    category: 'Aerial & Specialty Rigs',
-    items: [
-      'Freefly Alta X Heavy-Lift Cine-Drone',
-      'Custom 10" Carbon Fiber X8 Heavy Cinelifters',
-      'DJI Ronin 2 3-Axis Gyrostabilizer',
-      'Submersible Hydro-Housing with Air-Knife Deflector',
-    ],
-  },
-];
+import { whyPoppy, productionPipeline } from '@/data/services';
+import { leadershipInfo } from '@/data/team';
+import { brandPartners } from '@/data/projects';
 
 export default function AboutPage() {
   const { playUiClick } = useSound();
@@ -92,187 +29,228 @@ export default function AboutPage() {
       <AntiGravityCanvas particleCount={25} interactive={true} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb & Subtitle */}
+        {/* Breadcrumb */}
         <div className="mb-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A]">
           <Link href="/" className="hover:underline">Home</Link>
           <span>/</span>
-          <span>About Studio</span>
+          <span>About Us</span>
         </div>
 
-        {/* Hero Headline */}
+        {/* 02. ABOUT US: HERO HEADLINE */}
         <div className="max-w-4xl mb-20 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-6">
-            <Sparkles className="w-3.5 h-3.5" /> Born From Raw Cinema
+            <Sparkles className="w-3.5 h-3.5" /> ABOUT POPPY PRODUCTIONS
           </span>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[0.98] uppercase">
-            We Sculpt Cinema That <br />
+            We Turn Ideas Into <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400">
-              Refuses To Be Ignored.
+              Production.
             </span>
           </h1>
-          <p className="text-neutral-400 text-lg sm:text-xl mt-8 leading-relaxed max-w-3xl">
-            Poppy Productions was established on a radical belief: in an era of infinite scroll and digital noise, mere content disappears. What endures is the cinematic spectacle — the sudden breath caught in a viewer’s chest, the tactile weight of 35mm film grain, and the raw truth of human emotion.
+          <p className="text-neutral-300 text-lg sm:text-xl mt-8 leading-relaxed max-w-3xl">
+            Poppy Productions is a full-service media production company founded in 2026 by <strong className="text-white">Abdul Qadeer Bhatti</strong>, who brings 5 years of industry experience to the company.
+          </p>
+          <p className="text-neutral-400 text-base sm:text-lg mt-4 leading-relaxed max-w-3xl">
+            Built with a focus on better-quality production, Poppy Productions brings together an experienced team with 10+ years of individual industry experience across key members of the team, bringing proven expertise and practical knowledge to every production to handle projects from concept to final execution.
+          </p>
+          <p className="text-neutral-400 text-base sm:text-lg mt-4 leading-relaxed max-w-3xl">
+            From a focused shoot to large-scale event and expo coverage, we work closely with our clients to understand their vision, plan the production, execute the shoot, and deliver the final product.
           </p>
         </div>
 
-        {/* Studio Stills / Reel Showcase Grid */}
+        {/* Visual Showcase Stills */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24 reveal-stagger">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
             <img
               src="/posters/frame_hero.webp"
-              alt="High-Altitude Aerial Expedition"
+              alt="Event & Expo Coverage"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
-              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E3A]">The Element</span>
-              <h3 className="text-lg font-bold text-white">Sub-Zero Mountain Expeditions</h3>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E3A]">Scale & Energy</span>
+              <h3 className="text-lg font-bold text-white">Large-Scale Event & Expo Coverage</h3>
             </div>
           </div>
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
             <img
               src="/posters/frame_girl.webp"
-              alt="Human Emotional Depth"
+              alt="Commercials & Ad Films"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
-              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E3A]">The Emotion</span>
-              <h3 className="text-lg font-bold text-white">Unfiltered Rembrandt Portraits</h3>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E3A]">Visual Storytelling</span>
+              <h3 className="text-lg font-bold text-white">Commercials & Brand Ad Films</h3>
             </div>
           </div>
 
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
             <img
               src="/posters/frame_embers.webp"
-              alt="High-Speed Macro Dynamics"
+              alt="Post-Production & Polish"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
-              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E3A]">The Alchemy</span>
-              <h3 className="text-lg font-bold text-white">Phantom 1000fps Macro Physics</h3>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E3A]">Precision Finishing</span>
+              <h3 className="text-lg font-bold text-white">Editing & Visual Refinement</h3>
             </div>
           </div>
         </div>
 
-        {/* Studio Philosophy 3 Pillars */}
+        {/* 05. WHY POPPY PRODUCTIONS */}
         <div className="py-16 border-t border-b border-white/10 mb-24">
           <div className="max-w-3xl mb-12 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
-              FOUNDATIONAL PILLARS
+              WHY POPPY PRODUCTIONS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-              The Architecture of Sensation
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
+              Built Around Your Vision.
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center">
-                <Camera className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Optical Authenticity</h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                We avoid sterile digital rendering wherever nature provides real physics. We shoot on large format sensors with vintage anamorphic glass, capturing genuine chromatic warmth, lens flares, and microscopic textures.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center">
-                <Layers className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Anti-Gravity Momentum</h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Cinema is rhythm. We construct dynamic camera movements — from weightless drone dives to high-speed tracking runs — synchronizing every cut to acoustic frequencies that keep the audience mesmerized.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Commercial Conversion</h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                A masterpiece is pointless if it leaves the market unmoved. Our films are engineered to create intense brand equity, command viral cultural cachet, and drive measurable global growth for our partners.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Cine Arsenal / Equipment Standard */}
-        <div className="mb-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
-                PRODUCTION INFRASTRUCTURE
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-                The Cine Arsenal
-              </h2>
-            </div>
-            <p className="text-neutral-400 text-sm max-w-md">
-              We own and maintain our cinema packages in-house, ensuring zero downtime and immediate deployment anywhere on earth.
+            <p className="text-neutral-400 text-base mt-2">
+              We believe good production starts with understanding the client.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
-            {cineGear.map((group, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 reveal-stagger">
+            {whyPoppy.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3"
               >
-                <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#FF5E3A] mb-4">
-                    {group.category}
-                  </h3>
-                  <ul className="space-y-3 text-xs text-neutral-300">
-                    {group.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-1.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="w-10 h-10 rounded-lg bg-[#FF5E3A]/10 text-[#FF5E3A] flex items-center justify-center font-mono font-bold text-sm">
+                  0{idx + 1}
                 </div>
+                <h3 className="text-base font-bold text-white uppercase tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-neutral-400 text-xs leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Milestones Timeline */}
-        <div className="py-16 border-t border-white/10 mb-20">
-          <div className="max-w-3xl mb-12 reveal">
+        {/* 09. LEADERSHIP */}
+        <div className="mb-24">
+          <div className="p-8 sm:p-14 rounded-3xl bg-neutral-900/80 border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal">
+            <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden bg-black border border-white/10">
+              <img
+                src="/posters/frame_hero.webp"
+                alt="Abdul Qadeer Bhatti"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
+                <span className="text-xs uppercase font-mono font-bold text-[#FF5E3A] tracking-widest">FOUNDER & CEO</span>
+                <h3 className="text-2xl font-black text-white">{leadershipInfo.name}</h3>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 space-y-5">
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block">
+                LEADERSHIP
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight leading-tight">
+                {leadershipInfo.headline}
+              </h2>
+              <div className="space-y-4 text-neutral-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                  With <strong className="text-white">5 years of industry experience</strong>, Abdul Qadeer Bhatti founded Poppy Productions with a clear objective: to provide better-quality productions and build a full-service production company.
+                </p>
+                <p className="text-neutral-400">
+                  Poppy brings together a team with <strong className="text-white">more than 10 years of collective experience</strong>, combining production expertise with a practical understanding of the demands of modern media.
+                </p>
+              </div>
+
+              <div className="pt-2 flex items-center gap-4">
+                <Link
+                  href="/team"
+                  onClick={playUiClick}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-bold uppercase tracking-wider text-xs hover:bg-neutral-200 transition-colors"
+                >
+                  <span>Meet Our Production Team</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 10. OUR CAPABILITY */}
+        <div className="mb-24 py-16 border-t border-b border-white/10">
+          <div className="text-center max-w-3xl mx-auto mb-12 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
-              OUR JOURNEY
+              OUR CAPABILITY
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-              Studio Milestones
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
+              One Team. End-To-End Execution.
             </h2>
+            <p className="text-neutral-400 text-sm sm:text-base mt-2">
+              From the first conversation to the final export, Poppy Productions brings the key stages of production together under one roof.
+            </p>
           </div>
 
-          <div className="relative border-l border-white/15 pl-6 sm:pl-10 space-y-12 ml-4 reveal-stagger">
-            {milestones.map((m, idx) => (
-              <div key={idx} className="relative group">
-                {/* Dot */}
-                <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-neutral-900 border-2 border-[#FF5E3A] group-hover:bg-[#FF5E3A] transition-colors" />
-
-                <span className="font-mono text-xs font-bold text-[#FF5E3A] tracking-widest block mb-1">
-                  {m.year}
-                </span>
-                <h3 className="text-xl font-bold text-white mb-2">{m.title}</h3>
-                <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">{m.desc}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center mb-8 reveal-stagger">
+            {[
+              'Concept',
+              'Production',
+              'Photography',
+              'Post-Production',
+              'Editing',
+              'Motion Graphics'
+            ].map((cap, i) => (
+              <div key={i} className="p-5 rounded-2xl bg-neutral-900/60 border border-white/10">
+                <span className="text-xs font-mono font-bold text-[#FF5E3A] block mb-1">0{i + 1}</span>
+                <span className="text-sm font-bold text-white uppercase tracking-wider">{cap}</span>
               </div>
+            ))}
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center text-neutral-300 text-sm sm:text-base leading-relaxed reveal">
+            Our approach allows clients to work with one production partner throughout the project rather than managing disconnected stages of production separately.
+          </div>
+        </div>
+
+        {/* 07. OUR EXPERIENCE & COLLABORATIONS */}
+        <div className="mb-24">
+          <div className="max-w-3xl mb-8 reveal">
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
+              OUR EXPERIENCE
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
+              Small Projects. Large Productions. Same Commitment.
+            </h2>
+            <p className="text-neutral-300 text-sm sm:text-base mt-4 leading-relaxed">
+              Our production experience ranges from focused individual shoots to large-scale event and expo coverage. We have worked on projects including <strong className="text-white">Future Fest, HESP 2026, Connected Pakistan, Skills Gala</strong>, and other brand, corporate, education, and commercial projects.
+            </p>
+            <p className="text-neutral-400 text-sm mt-2 leading-relaxed">
+              Our work has included collaborations with names such as <strong className="text-white">LEVIS, Sapphire, Rashid Latif Khan University, WinningGo, The Scarf</strong>, and <strong className="text-white">The RIAB</strong>.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 reveal-stagger">
+            {brandPartners.map((bp, i) => (
+              <span
+                key={i}
+                className="px-4 py-2 rounded-xl bg-neutral-900/80 border border-white/10 text-xs font-mono font-bold text-white tracking-wider"
+              >
+                {bp}
+              </span>
             ))}
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* 11. FINAL CTA */}
         <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-950 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 reveal-scale">
           <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FF5E3A] block mb-1">
+              HAVE AN IDEA?
+            </span>
             <h3 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-              Ready to create your next landmark film?
+              Let&apos;s take it from concept to final execution.
             </h3>
             <p className="text-neutral-400 text-sm mt-2 max-w-lg">
-              Explore our selected portfolio or connect directly with our executive creative team.
+              Poppy Productions — Your Growth Partner.
             </p>
           </div>
           <div className="flex items-center gap-4">
@@ -281,7 +259,7 @@ export default function AboutPage() {
               onClick={playUiClick}
               className="px-6 py-3.5 rounded-full bg-white text-black font-bold uppercase tracking-wider text-xs hover:bg-neutral-200 transition-colors"
             >
-              View Work
+              Selected Work
             </Link>
             <Link
               href="/start-project"

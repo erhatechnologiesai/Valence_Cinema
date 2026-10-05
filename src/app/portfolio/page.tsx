@@ -8,10 +8,11 @@ import {
   LayoutGrid,
   ListFilter,
   Search,
-  Film,
+  Sparkles,
   ArrowUpRight,
+  Film
 } from 'lucide-react';
-import { projects, Project, projectCategories } from '@/data/projects';
+import { projects, Project, projectCategories, brandPartners } from '@/data/projects';
 import VideoModal from '@/components/video/VideoModal';
 import AntiGravityCanvas from '@/components/canvas/AntiGravityCanvas';
 import { useSound } from '@/components/audio/SoundController';
@@ -30,7 +31,8 @@ export default function PortfolioPage() {
     const matchesSearch =
       p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.client.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.synopsis.toLowerCase().includes(searchQuery.toLowerCase());
+      p.synopsis.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.subtitle.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -48,23 +50,26 @@ export default function PortfolioPage() {
         <div className="mb-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A]">
           <Link href="/" className="hover:underline">Home</Link>
           <span>/</span>
-          <span>Selected Portfolio</span>
+          <span>Selected Work</span>
         </div>
 
-        {/* Header */}
+        {/* 08. HEADER */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
           <div className="max-w-2xl reveal">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
-              <Film className="w-3.5 h-3.5" /> Curated Cinema Archive
+              <Film className="w-3.5 h-3.5" /> OUR WORK
             </span>
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white uppercase leading-[0.98]">
               Selected <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400">
-                Works & Films
+                Work
               </span>
             </h1>
-            <p className="text-neutral-400 text-sm sm:text-base mt-4 leading-relaxed">
-              Explore our landmark commercial films, high-altitude documentaries, and sensory brand anthems. Each project engineered to capture raw attention.
+            <p className="text-neutral-300 text-sm sm:text-base mt-4 leading-relaxed">
+              A selection of projects we&apos;ve produced, captured, and delivered across different formats and production requirements.
+            </p>
+            <p className="text-neutral-400 text-xs sm:text-sm mt-2 leading-relaxed">
+              Small projects. Large productions. Same commitment. From focused individual shoots to large-scale event and expo coverage.
             </p>
           </div>
 
@@ -75,16 +80,16 @@ export default function PortfolioPage() {
                 {projects.length}
               </span>
               <span className="text-neutral-400 uppercase tracking-wider text-[10px]">
-                Completed Films
+                Delivered Projects
               </span>
             </div>
             <div className="w-px h-8 bg-white/10" />
             <div>
               <span className="font-mono text-xl font-bold text-[#FF5E3A] block">
-                18
+                {brandPartners.length}+
               </span>
               <span className="text-neutral-400 uppercase tracking-wider text-[10px]">
-                Awards Won
+                Collaborations
               </span>
             </div>
             <div className="w-px h-8 bg-white/10" />
@@ -93,7 +98,7 @@ export default function PortfolioPage() {
                 100%
               </span>
               <span className="text-neutral-400 uppercase tracking-wider text-[10px]">
-                4K Mastered
+                End-to-End
               </span>
             </div>
           </div>
@@ -127,7 +132,7 @@ export default function PortfolioPage() {
               <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search film, client..."
+                placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-black/40 border border-white/10 rounded-full pl-8 pr-3 py-1.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#FF5E3A]"
@@ -204,7 +209,7 @@ export default function PortfolioPage() {
                   >
                     <div className="px-5 py-2.5 rounded-full bg-white text-black font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-xl scale-95 group-hover:scale-100 transition-transform">
                       <Play className="w-3.5 h-3.5 fill-black" />
-                      <span>Watch Film</span>
+                      <span>Watch Cut</span>
                     </div>
                   </button>
 
@@ -229,14 +234,14 @@ export default function PortfolioPage() {
 
                   <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs">
                     <span className="text-[11px] text-neutral-400 font-mono">
-                      {project.camera.split(' ')[0]} {project.camera.split(' ')[1]}
+                      {project.subtitle}
                     </span>
                     <Link
                       href={`/portfolio/${project.slug}`}
                       onClick={playUiClick}
                       className="text-[#FF5E3A] font-bold uppercase tracking-wider flex items-center gap-1 group/btn hover:underline"
                     >
-                      <span>Case Study</span>
+                      <span>Details</span>
                       <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -291,7 +296,6 @@ export default function PortfolioPage() {
 
                 <div className="flex items-center gap-6 text-xs text-neutral-400 font-mono">
                   <span>{project.duration}</span>
-                  <span className="hidden lg:inline">{project.camera}</span>
                   <Link
                     href={`/portfolio/${project.slug}`}
                     onClick={playUiClick}
@@ -307,7 +311,7 @@ export default function PortfolioPage() {
 
         {filteredProjects.length === 0 && (
           <div className="py-20 text-center text-neutral-400">
-            <p className="text-lg">No films found matching your search criteria.</p>
+            <p className="text-lg">No projects found matching your search criteria.</p>
             <button
               onClick={() => {
                 setSelectedCategory('All');

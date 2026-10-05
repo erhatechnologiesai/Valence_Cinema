@@ -68,16 +68,16 @@ export default function ContactPage() {
         {/* Hero */}
         <div className="max-w-3xl mb-16 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
-            <MessageSquare className="w-3.5 h-3.5" /> Direct Studio Channels
+            <MessageSquare className="w-3.5 h-3.5" /> DIRECT STUDIO CHANNELS
           </span>
           <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white uppercase leading-[0.98]">
             Initiate Contact <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400">
-              Across Three Continents
+              With Poppy Productions
             </span>
           </h1>
           <p className="text-neutral-400 text-sm sm:text-base mt-4 leading-relaxed">
-            Our executive producers in London, New York, and Tokyo review all commercial treatments, co-productions, and private inquiries within 24 hours.
+            Whether you&apos;re planning a commercial, covering an event, producing content, or simply looking for a production partner, we&apos;re ready to understand your vision and build the production around it.
           </p>
         </div>
 
@@ -116,10 +116,10 @@ export default function ContactPage() {
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {[
-                      'New Commercial Commission',
-                      'Documentary Co-Production',
-                      'Press & Media Inquiries',
-                      'Crew & Showreel Submissions',
+                      'Event & Expo Coverage',
+                      'Commercials & Ad Films',
+                      'Video Production',
+                      'Photography & Post-Production',
                     ].map((dept) => (
                       <button
                         type="button"

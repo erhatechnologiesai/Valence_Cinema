@@ -15,52 +15,58 @@ import { useSound } from '@/components/audio/SoundController';
 
 const projectFormats = [
   {
-    id: 'commercial',
-    title: 'Theatrical Commercial Anthem',
-    desc: 'High-velocity 60s/30s brand statement shot on ARRI Alexa 65.',
-    badge: 'Most Popular',
+    id: 'event-coverage',
+    title: 'Event & Expo Coverage',
+    desc: 'From focused events to large-scale expos, capturing people, moments, energy, and experience.',
+    badge: 'Popular for Expos',
   },
   {
-    id: 'documentary',
-    title: 'Human Truth & Documentary',
-    desc: 'Intimate, emotional long-form exploration in raw Rembrandt light.',
-    badge: 'Festival Caliber',
+    id: 'commercials',
+    title: 'Commercials & Ad Films',
+    desc: 'Translating your brand message into engaging visual stories and ad campaigns.',
+    badge: 'High Impact',
   },
   {
-    id: 'aerial-fpv',
-    title: 'High-Altitude Heavy FPV Aerial',
-    desc: 'Sub-zero alpine mountain dives and high-speed chase cinematography.',
-    badge: 'Extreme Scale',
+    id: 'video-production',
+    title: 'Professional Video Production',
+    desc: 'Professional video content built around your objectives and vision from planning to final cut.',
+    badge: 'Full-Service',
   },
   {
-    id: 'phantom-macro',
-    title: '1,000fps Phantom Macro & Tabletop',
-    desc: 'Microscopic liquid gold physics, cosmetics, and luxury sensory detail.',
-    badge: 'Sensory Master',
+    id: 'photography-content',
+    title: 'Photography & Content',
+    desc: 'Professional photography for brands, events, and projects captured with purpose and precision.',
+    badge: 'Campaign Essential',
+  },
+  {
+    id: 'post-motion',
+    title: 'Post-Production & Motion Graphics',
+    desc: 'Video editing, visual refinement, and motion graphics that add clarity, movement, and impact.',
+    badge: 'Refinement',
   },
 ];
 
 const timelineOptions = [
-  'Immediate Rush (Next 2-4 Weeks)',
-  'Standard Production (1 - 2 Months)',
-  'Quarterly Campaign (2 - 4 Months)',
-  'Long-Range Expedition (6+ Months)',
+  'Immediate Rush (Next 1 - 2 Weeks)',
+  'Standard Production (2 - 4 Weeks)',
+  'Quarterly Campaign (1 - 2 Months)',
+  'Large-Scale Expo / Event Window',
 ];
 
 const budgetTiers = [
-  { range: '$30,000 - $60,000', label: 'Tier 1: Boutique Commercial / Social Suite' },
-  { range: '$60,000 - $120,000', label: 'Tier 2: Flagship 4K Brand Film with Drone' },
-  { range: '$120,000 - $250,000', label: 'Tier 3: Multi-Location Global Expedition' },
-  { range: '$250,000+', label: 'Tier 4: Theatrical Feature / Master Cinema Suite' },
+  { range: '$5,000 - $15,000', label: 'Tier 1: Focused Shoot / Photography / Social Suite' },
+  { range: '$15,000 - $35,000', label: 'Tier 2: Commercial Ad Film / Multi-Day Event Coverage' },
+  { range: '$35,000 - $75,000', label: 'Tier 3: Large-Scale Expo / Comprehensive Brand Campaign' },
+  { range: '$75,000+', label: 'Tier 4: Enterprise Annual Media Partner / Master Suite' },
 ];
 
 const deliverablesList = [
-  '4K DCI Theatrical Master',
-  'Dolby Atmos 7.1.4 Spatial Mix',
-  '9:16 Vertical Cutdowns for Social',
-  'DaVinci 35mm Show LUT Package',
-  'Behind-The-Scenes Photography Stems',
-  'RAW Sensor Footage Archive',
+  '4K Master Master Video Exports',
+  'Same-Day / Next-Day Event Highlight Reels',
+  '9:16 Vertical Video Cuts for Social Media',
+  'High-Resolution Retouched Photography Package',
+  'Motion Graphics & Animated Title Package',
+  'Raw Footage Archive & Complete Project Files',
 ];
 
 export default function StartProjectPage() {
@@ -137,16 +143,16 @@ export default function StartProjectPage() {
         {/* Header */}
         <div className="mb-12 reveal">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A] mb-4">
-            <Sparkles className="w-3.5 h-3.5" /> Interactive Production Planner
+            <Sparkles className="w-3.5 h-3.5" /> HAVE AN IDEA?
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white uppercase leading-[0.98]">
-            Start Your Next <br />
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase leading-[0.98]">
+            Let&apos;s take it from concept <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400">
-              Cinematic Masterpiece
+              to final execution.
             </span>
           </h1>
-          <p className="text-neutral-400 text-sm mt-3">
-            Build your production brief step-by-step. Our producers will engineer a custom treatment and budget within 24 hours.
+          <p className="text-neutral-400 text-sm mt-3 max-w-2xl leading-relaxed">
+            Whether you&apos;re planning a commercial, covering an event, producing content, or simply looking for a production partner, we&apos;re ready to understand your vision and build the production around it.
           </p>
         </div>
 
