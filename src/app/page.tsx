@@ -182,7 +182,7 @@ export default function HomePage() {
           <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#FF5E3A] to-transparent mx-auto my-4" />
 
           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto">
-            Poppy Productions is a full-service media production company founded in 2026 by <strong className="text-white">Abdul Qadeer Bhatti</strong>, who brings 5 years of industry experience to the company.
+            Poppy Productions is a full-service media production company founded by <strong className="text-white">Abdul Qadeer Bhatti</strong>, who brings 5 years of industry experience to the company.
           </p>
 
           <p className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-4xl mx-auto">

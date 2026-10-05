@@ -107,7 +107,7 @@ export default function Footer() {
               Your Growth Partner. A full-service media production company providing end-to-end production solutions — from shooting and photography to post-production, editing, commercials, and event coverage.
             </p>
             <div className="text-xs font-mono font-bold text-[#FF5E3A] uppercase tracking-wider mb-4">
-              Founded in 2026 by Abdul Qadeer Bhatti
+              Founded by Abdul Qadeer Bhatti
             </div>
             <div className="flex items-center gap-2 text-neutral-400">
               <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-neutral-300">

@@ -48,7 +48,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="text-neutral-300 text-lg sm:text-xl mt-8 leading-relaxed max-w-3xl">
-            Poppy Productions is a full-service media production company founded in 2026 by <strong className="text-white">Abdul Qadeer Bhatti</strong>, who brings 5 years of industry experience to the company.
+            Poppy Productions is a full-service media production company founded by <strong className="text-white">Abdul Qadeer Bhatti</strong>, who brings 5 years of industry experience to the company.
           </p>
           <p className="text-neutral-400 text-base sm:text-lg mt-4 leading-relaxed max-w-3xl">
             Built with a focus on better-quality production, Poppy Productions brings together an experienced team with 10+ years of individual industry experience across key members of the team, bringing proven expertise and practical knowledge to every production to handle projects from concept to final execution.
