@@ -8,10 +8,11 @@ import { useSound } from '@/components/audio/SoundController';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Services', href: '/services' },
-  { name: 'Team', href: '/team' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Our Services', href: '/services' },
+  { name: 'Our Work', href: '/portfolio' },
+  { name: 'Our Approach', href: '/#our-approach' },
+  { name: 'Leadership', href: '/team' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -42,24 +43,44 @@ export default function Navbar() {
           {/* Brand Logo - Poppy Productions */}
           <Link
             href="/"
-            className="flex items-center text-xl sm:text-2xl font-bold tracking-tight transition-transform duration-200 hover:scale-[1.02]"
+            className="flex items-center text-xl sm:text-2xl font-bold tracking-tight transition-transform duration-200 hover:scale-[1.02] flex-shrink-0"
           >
             <span className="text-white">Poppy</span>
             <span className="text-[#FF5E3A] ml-1.5">Productions</span>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9">
+          {/* Desktop Navigation Links (Matching Document Headings: About Us, Our Services, Our Work, Our Approach, Leadership, Contact) */}
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                  className={`text-xs xl:text-sm font-medium tracking-wide transition-all duration-200 ${
                     isActive
-                      ? 'text-white font-semibold'
-                      : 'text-neutral-300 hover:text-white'
+                      ? 'text-white font-semibold px-3 py-1 rounded-full border border-white/30 bg-white/5 shadow-sm'
+                      : 'text-neutral-300 hover:text-white px-2 py-1'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Medium Screens Navigation (fallback gap) */}
+          <nav className="hidden md:flex lg:hidden items-center gap-3">
+            {navLinks.slice(0, 5).map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-xs font-medium tracking-wide transition-all duration-200 ${
+                    isActive
+                      ? 'text-white font-semibold px-2.5 py-0.5 rounded-full border border-white/30 bg-white/5'
+                      : 'text-neutral-300 hover:text-white px-1.5 py-0.5'
                   }`}
                 >
                   {link.name}
@@ -69,7 +90,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action: Sound Toggle + Start Project Pill Button */}
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             {/* Audio Toggle */}
             <button
               onClick={toggleSound}
@@ -87,14 +108,14 @@ export default function Navbar() {
             {/* Start Project CTA Button (Matching screenshot orange pill) */}
             <Link
               href="/start-project"
-              className="px-6 py-2.5 rounded-full bg-[#FF5E3A] hover:bg-[#e04e2c] active:scale-95 text-white text-sm font-semibold tracking-wide shadow-md shadow-orange-600/30 transition-all duration-200"
+              className="px-5 xl:px-6 py-2 xl:py-2.5 rounded-full bg-[#FF5E3A] hover:bg-[#e04e2c] active:scale-95 text-white text-xs xl:text-sm font-semibold tracking-wide shadow-md shadow-orange-600/30 transition-all duration-200"
             >
               Start Project
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-2">
             <button
               onClick={toggleSound}
               className="p-2 rounded-full bg-white/10 text-white cursor-pointer"
@@ -115,8 +136,8 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-neutral-950/98 backdrop-blur-2xl border-b border-white/10 px-6 pt-5 pb-8 space-y-4 animate-in slide-in-from-top-4 duration-300">
-          <nav className="flex flex-col space-y-3">
+        <div className="md:hidden bg-neutral-950/98 backdrop-blur-2xl border-b border-white/10 px-6 pt-5 pb-8 space-y-4 animate-in slide-in-from-top-4 duration-300">
+          <nav className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -124,9 +145,9 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium py-2 px-3 rounded-lg transition-colors flex items-center justify-between ${
+                  className={`text-sm font-medium py-2.5 px-3 rounded-xl transition-colors flex items-center justify-between ${
                     isActive
-                      ? 'text-white bg-white/10 font-bold'
+                      ? 'text-white bg-white/10 font-bold border border-white/15'
                       : 'text-neutral-300 hover:text-white hover:bg-white/5'
                   }`}
                 >

@@ -120,23 +120,10 @@ export default function HomePage() {
           </button>
         </div>
 
-        {/* Hero Bottom Bar with Client Copywriting on Left side */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 w-full flex flex-col md:flex-row md:items-end justify-between gap-6">
-          {/* Left Side: Growth Partner & Concept to Execution */}
-          <div className="max-w-xl p-5 sm:p-6 rounded-2xl bg-black/55 backdrop-blur-md border border-white/15 shadow-2xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF5E3A]/20 border border-[#FF5E3A]/40 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#FF5E3A] mb-3">
-              <Sparkles className="w-3 h-3" /> YOUR GROWTH PARTNER
-            </span>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight leading-snug">
-              We take your idea from concept to final execution.
-            </h1>
-            <p className="text-neutral-300 text-xs sm:text-sm mt-2 leading-relaxed font-normal">
-              Poppy Productions is a media production company providing end-to-end production solutions — from shooting and photography to post-production, editing, commercials, and event coverage.
-            </p>
-          </div>
-
-          {/* Right Side: Play Showreel + Scroll Down */}
-          <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0 self-end md:self-end">
+        {/* Hero Bottom Bar */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 w-full flex items-center justify-end">
+          {/* Right Action Bar: Play Showreel + Scroll Down */}
+          <div className="flex items-center gap-3 sm:gap-4">
             <button
               onClick={() => openModal(projects[0])}
               className="px-6 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-xl backdrop-blur-sm"
@@ -146,13 +133,36 @@ export default function HomePage() {
             </button>
 
             <a
-              href="#about-us"
+              href="#hero-statement"
               className="w-11 h-11 rounded-full border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-white/80 hover:text-white hover:border-[#FF5E3A] transition-colors"
-              aria-label="Scroll to About Section"
+              aria-label="Scroll to Next Section"
             >
               <ChevronDown className="w-4 h-4" />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 01. HERO STATEMENT: YOUR GROWTH PARTNER                                   */}
+      {/* ========================================================================= */}
+      <section id="hero-statement" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-orange-600/10 via-rose-600/10 to-transparent blur-[160px] pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6 reveal">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF5E3A]/10 border border-[#FF5E3A]/30 text-xs font-bold uppercase tracking-widest text-[#FF5E3A]">
+            <Sparkles className="w-3.5 h-3.5" /> YOUR GROWTH PARTNER
+          </span>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-tight">
+            We take your idea from concept <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E3A] via-rose-500 to-amber-400">
+              to final execution.
+            </span>
+          </h2>
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#FF5E3A] to-transparent mx-auto my-4" />
+          <p className="text-neutral-300 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto font-normal">
+            Poppy Productions is a media production company providing end-to-end production solutions — from shooting and photography to post-production, editing, commercials, and event coverage.
+          </p>
         </div>
       </section>
 
@@ -199,7 +209,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 03. WHAT WE DO                                                            */}
       {/* ========================================================================= */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#08080a] border-b border-white/5">
+      <section id="what-we-do" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#08080a] border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="p-8 sm:p-14 rounded-3xl bg-neutral-900/60 border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal">
             <div className="lg:col-span-4 space-y-3">
@@ -225,7 +235,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 04. OUR SERVICES                                                          */}
       {/* ========================================================================= */}
-      <section id="services" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950">
+      <section id="our-services" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
@@ -333,7 +343,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 06. OUR APPROACH                                                          */}
       {/* ========================================================================= */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-b border-white/5">
+      <section id="our-approach" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#FF5E3A] block mb-2">
@@ -371,7 +381,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 07 & 08. OUR EXPERIENCE & SELECTED WORK                                   */}
       {/* ========================================================================= */}
-      <section id="selected-work" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#08080a]">
+      <section id="our-work" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#08080a]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header with Experience Statement */}
           <div className="mb-14 reveal">
@@ -540,7 +550,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 09. LEADERSHIP                                                            */}
       {/* ========================================================================= */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5">
+      <section id="leadership" className="py-24 px-4 sm:px-6 lg:px-8 bg-neutral-950 border-t border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="p-8 sm:p-14 rounded-3xl bg-neutral-900/80 border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal">
             <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden bg-black border border-white/10">
